@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  height: 42px;
+  align-items: center;
+}
+
+.container a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  color: var(--color-neutral-2);
+  margin-bottom: 3px;
+}
+
+.isActive::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary-4);
+  bottom: 0;
+  right: 0;
+}
