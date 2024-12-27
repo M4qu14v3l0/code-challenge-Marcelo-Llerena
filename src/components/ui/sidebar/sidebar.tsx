@@ -12,7 +12,9 @@ export default function Sidebar() {
       {links.map((link) => (
         <NavLink
           to={link.to}
-          className={({ isActive }) => (isActive ? styles.isActive : "")}
+          className={({ isActive }) =>
+            isActive ? styles.isActive : styles.notActive
+          }
         >
           {link.label}
         </NavLink>

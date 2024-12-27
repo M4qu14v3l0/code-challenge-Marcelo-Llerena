@@ -14,8 +14,16 @@
   font-weight: 400;
   text-decoration: none;
   font-size: var(--text-sm);
-  color: var(--color-neutral-2);
+
   margin-bottom: 3px;
+}
+
+.notActive {
+  color: var(--color-neutral-2);
+}
+
+.isActive {
+  color: var(--color-primary-4);
 }
 
 .isActive::before {
