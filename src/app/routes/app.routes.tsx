@@ -1,8 +1,8 @@
 import { Navigate, RouteObject } from "react-router-dom";
 import { Paths } from "./path.routes";
-import DashboardLayout from "@/components/layouts/dashboard-layout";
-import MyTaskPage from "../pages/my-task/my-task";
+import DashboardLayout from "@/components/layouts/dashboard-layout/dashboard-layout";
 import DashboardPage from "../pages/dashboard/dashboard";
+import MyTaskPage from "../pages/my-task/my-task";
 
 export const AppRoutes: RouteObject[] = [
   {
