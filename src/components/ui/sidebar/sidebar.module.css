@@ -15,7 +15,7 @@
   text-decoration: none;
   font-size: var(--text-sm);
 
-  margin-bottom: 3px;
+  padding-bottom: 3px;
 }
 
 .notActive {

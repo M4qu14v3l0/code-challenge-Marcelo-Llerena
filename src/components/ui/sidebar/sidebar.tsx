@@ -9,8 +9,9 @@ const links = [
 export default function Sidebar() {
   return (
     <aside className={styles.container}>
-      {links.map((link) => (
+      {links.map((link, key) => (
         <NavLink
+          key={key}
           to={link.to}
           className={({ isActive }) =>
             isActive ? styles.isActive : styles.notActive
