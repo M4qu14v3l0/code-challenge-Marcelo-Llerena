@@ -1,0 +1,17 @@
+.title {
+  font-weight: 700;
+  font-size: var(--text-lg);
+  line-height: var(--leading-lg);
+  color: var(--color-neutral-2);
+  letter-spacing: var(--letter-spacing);
+  margin-bottom: 16px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 640px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
