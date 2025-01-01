@@ -1,7 +1,6 @@
 .container {
   display: flex;
   gap: 16px;
-  padding: 20px 16px 0px 16px;
   overflow-x: scroll;
   scrollbar-width: none;
 }
@@ -9,5 +8,6 @@
 @media (min-width: 992px) {
   .container {
     gap: 32px;
+    padding: 0px;
   }
 }
