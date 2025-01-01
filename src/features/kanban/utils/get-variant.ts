@@ -1,16 +1,16 @@
-import { theme } from "../theme/alerts-theme";
+import { alertsTheme } from "../theme/alerts-theme";
 
 export const getVariant = (variant: string) => {
   switch (variant) {
     case "success":
-      return theme.success;
+      return alertsTheme.success;
     case "warning":
-      return theme.warning;
+      return alertsTheme.warning;
     case "error":
-      return theme.error;
+      return alertsTheme.error;
     case "default":
-      return theme.default;
+      return alertsTheme.default;
     default:
-      return theme.default;
+      return alertsTheme.default;
   }
 };
