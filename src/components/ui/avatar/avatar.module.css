@@ -3,3 +3,10 @@
   width: 32px;
   border-radius: 50%;
 }
+
+@media (min-width: 992px) {
+  .avatar {
+    height: 40px;
+    width: 40px;
+  }
+}
