@@ -1,27 +1,27 @@
 import styles from "./card.module.css";
+
 import Tag from "@/features/kanban/components/tag/tag";
+import Avatar from "@/components/ui/avatar/avatar";
+
+import { TaskTag } from "@/__generated__/types";
+import { formatDate } from "../../utils/formatDate";
+
 import ClockIcon from "@/svgs/clock.svg?react";
 import MoreIcon from "@/svgs/more.svg?react";
-import { theme } from "../../theme/theme";
-
 import ClipIcon from "@/svgs/clip.svg?react";
 import SharedIcon from "@/svgs/shared.svg?react";
 import MessageIcon from "@/svgs/message.svg?react";
-import Avatar from "@/components/ui/avatar/avatar";
-import dayjs from "dayjs";
+import { alertsTheme } from "../../theme/alerts-theme";
 
 interface CardProps {
   title: string;
   points: number;
   date: string;
+  avatar?: string | null;
+  tag: TaskTag[];
 }
 
-export default function Card({ title, points, date }: CardProps) {
-  const formatDate = (dateString: string): string => {
-    const date = dayjs(dateString);
-    return date.format("D MMMM, YYYY").toUpperCase(); // Uppercase for JULY
-  };
-
+export default function Card({ title, points, date, avatar, tag }: CardProps) {
   const newDate = formatDate(date);
 
   return (
@@ -33,18 +33,20 @@ export default function Card({ title, points, date }: CardProps) {
       <div className={styles.cardSubHeader}>
         <span>{points} Pts</span>
         <Tag
+          variant="default"
           text={newDate}
-          icon={<ClockIcon style={{ color: theme.default.textColor }} />}
+          icon={<ClockIcon style={{ color: alertsTheme.default.textColor }} />}
         />
       </div>
 
       <div className={styles.cardTags}>
-        <Tag text="IOS APP" variant="success" />
-        <Tag text="ANDROID" variant="warning" />
+        {tag.map((tag) => (
+          <Tag text={tag} variant={tag} />
+        ))}
       </div>
 
       <div className={styles.cardFooter}>
-        <Avatar />
+        <Avatar src={avatar} />
         <div className={styles.taskDetails}>
           <ClipIcon />
           <span>

@@ -31,6 +31,7 @@
 }
 
 .cardSubHeader span {
+  font-weight: 700;
   color: var(--color-neutral-1);
   font-size: var(--text-md);
   line-height: var(--leading-md);
@@ -60,4 +61,10 @@
   align-items: center;
   gap: 4px;
   color: var(--color-neutral-1);
+}
+
+@media (min-width: 500px) {
+  .card {
+    width: 100%;
+  }
 }
