@@ -1,15 +1,16 @@
 import React from "react";
 import styles from "./tag.module.css";
-import { getVariant } from "../../utils/get-variant";
+import { getVariantByName } from "../../utils/get-variant-by-name";
+import { TaskTag } from "@/__generated__/types";
 
 interface TagProps {
   icon?: React.ReactElement;
   text: string;
-  variant?: "success" | "warning" | "error" | "default";
+  variant: TaskTag | "default";
 }
 
-export default function Tag({ icon, text, variant = "default" }: TagProps) {
-  const pallete = getVariant(variant);
+export default function Tag({ icon, text, variant }: TagProps) {
+  const pallete = getVariantByName(variant);
   return (
     <div
       className={`${styles.tag}`}
