@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom";
 
 import styles from "./dashboard-layout.module.css";
-import TaskFilterHeader from "@/features/task-filter-header/task-filter-header";
+
 import Sidebar from "@/components/ui/sidebar/sidebar";
+import ActionHeader from "@/features/action-header/action-header";
 
 export default function DashboardLayout() {
   return (
     <div className={styles.container}>
-      <TaskFilterHeader />
+      <ActionHeader />
       <Sidebar />
-      <Outlet />
+      <main className={styles.main}>
+        <Outlet />
+      </main>
     </div>
   );
 }
