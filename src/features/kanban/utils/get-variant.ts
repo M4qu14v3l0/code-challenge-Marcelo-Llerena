@@ -1,4 +1,4 @@
-import { theme } from "../theme/theme";
+import { theme } from "../theme/alerts-theme";
 
 export const getVariant = (variant: string) => {
   switch (variant) {
