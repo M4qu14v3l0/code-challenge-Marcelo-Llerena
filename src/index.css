@@ -1,5 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+@font-face {
+  font-family: "SanFranciscoProDisplay";
+  src: url("./assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SanFranciscoProDisplay";
+  src: url("./assets/fonts/sf-pro-display/SFPRODISPLAYMEDIUM.OTF");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SanFranciscoProDisplay";
+  src: url("./assets/fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF");
+  font-weight: 800;
+  font-style: normal;
+}
+
 :root {
   font-family: "Roboto";
 
@@ -33,7 +54,19 @@
   --color-tertiary-4: #e5b454;
   --color-tertiary-opacity: rgb(229, 180, 84, 0.1);
 
+  --color-react: #70b2d9;
+  --color-react-opacity: rgb(112, 178, 217, 0.1);
+  --color-node_js: #9a52b2;
+  --color-node_js-opacity: rgb(154, 82, 178, 0.1);
+  --color-android: #e5b454;
+  --color-android-opacity: rgb(229, 180, 84, 0.1);
+  --color-ios: #70b252;
+  --color-ios-opacity: rgb(112, 178, 82, 0.1);
+  --color-rails: #da584b;
+  --color-rails-opacity: rgb(218, 88, 75, 0.1);
+
   --letter-spacing: 0.75px;
+  --letter-spacing-sm: 0.25px;
 
   --text-xl: 20px;
   --leading-xl: 32px;
@@ -47,6 +80,9 @@
   --text-sm: 13px;
   --leading-sm: 22px;
 
+  --leading: 20px;
+
+  --rounded-full: 50%;
   --rounded-3xl: 24px;
   --rounded-2xl: 16px;
   --rounded-xl: 12px;
@@ -66,8 +102,18 @@
   margin: 0;
 }
 
-body {
+body,
+html {
   height: 100vh;
   width: 100%;
+}
+
+body {
   background-color: var(--color-neutral-5);
+}
+
+@media (min-width: 992px) {
+  :root {
+    font-family: SanFranciscoProDisplay;
+  }
 }
