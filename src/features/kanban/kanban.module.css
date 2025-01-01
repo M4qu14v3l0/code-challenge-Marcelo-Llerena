@@ -8,10 +8,19 @@
 }
 
 .column {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 340px;
   max-height: 640px;
   overflow-y: scroll;
+  overflow: hidden;
   scrollbar-width: none;
+}
+
+@media (min-width: 500px) {
+  .container {
+    width: 100%;
+  }
 }
