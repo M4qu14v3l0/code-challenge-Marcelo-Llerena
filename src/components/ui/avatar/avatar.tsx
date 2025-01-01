@@ -1,9 +1,19 @@
 import styles from "./avatar.module.css";
 
-export default function Avatar() {
+interface AvatarProps {
+  src?: string | null;
+}
+
+const defaultAvatar = "https://avatar.iran.liara.run/public";
+
+export default function Avatar({
+  src = "https://avatar.iran.liara.run/public",
+}: AvatarProps) {
   return (
-    <div className={styles.avatar}>
-      <img src="/images/avatar.svg" alt="avatar" />
-    </div>
+    <img
+      src={src ? src : defaultAvatar}
+      alt="avatar"
+      className={styles.avatar}
+    />
   );
 }
