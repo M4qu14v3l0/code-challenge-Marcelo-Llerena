@@ -1,1 +1,41 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas:
+    "action-header"
+    "sidebar"
+    "main";
+  grid-template-rows: 64px 42px auto;
+}
 
+.main {
+  grid-area: main;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  padding: 20px 16px 0px 16px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 24px;
+    grid-template-areas:
+      "action-header"
+      "main";
+    grid-template-rows: 64px auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "sidebar action-header"
+      "sidebar main";
+    grid-template-rows: 64px auto;
+    grid-template-columns: 232px 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+}
