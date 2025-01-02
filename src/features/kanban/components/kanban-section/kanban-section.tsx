@@ -24,7 +24,9 @@ export const KanbanSection = ({ title, status }: SectionDataProps) => {
     return (
       <div className={styles.container}>
         <h2 className={styles.title}>{title} (0)</h2>
-        <MessageByStatus status={status} />
+        <div className={styles.section}>
+          <MessageByStatus status={status} />
+        </div>
       </div>
     );
 
