@@ -1,0 +1,4 @@
+.cardTags {
+  display: flex;
+  gap: 8px;
+}
