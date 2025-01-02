@@ -1,51 +1,25 @@
+import { KanbanActionHeader } from "./components/kanban-action-header/kanban-action-header";
+import { ViewMode } from "./interfaces/kanban.interfaces";
 import styles from "./kanban.module.css";
-import Card from "./components/card/card";
-import Loader from "@/components/ui/loader/loader";
-import { Status } from "@/__generated__/types";
-import { useGetTasksQuery } from "./api/get-tasks.generated";
-import { hasData } from "./utils/has-data";
-import MessageByStatus from "./components/message-by-status/message-by-status";
+import { ReactNode, useState } from "react";
+import { KanbanContext } from "./provider/use-kanban-context";
+import { KanbanBody } from "./components/kanban-body/kanban-body";
+import { KanbanSection } from "./components/kanban-section/kanban-section";
 
 interface KanbanProps {
-  title: string;
-  status: Status;
+  children: ReactNode;
 }
 
-export default function Kanban({ title, status }: KanbanProps) {
-  const { error, data, loading } = useGetTasksQuery({
-    variables: { input: { status } },
-  });
-
-  if (loading) return <Loader />;
-  if (error) return <h1>Error</h1>;
-
-  if (hasData(data?.tasks)) {
-    return (
-      <div className={styles.container}>
-        <h2 className={styles.title}>{title} (0)</h2>
-        <div className={styles.column}>
-          <MessageByStatus status={status} />
-        </div>
-      </div>
-    );
-  }
+export default function Kanban({ children }: KanbanProps) {
+  const [viewMode, setViewMode] = useState<ViewMode>("board");
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>
-        {title} ({data?.tasks.length})
-      </h2>
-      <div className={styles.column}>
-        {data?.tasks.map((task) => (
-          <Card
-            title={task.name}
-            date={task.dueDate}
-            points={4}
-            avatar={task.assignee?.avatar}
-            tag={task.tags}
-          />
-        ))}
-      </div>
-    </div>
+    <KanbanContext.Provider value={{ viewMode, setViewMode }}>
+      <div className={styles.kanban}>{children}</div>;
+    </KanbanContext.Provider>
   );
 }
+
+Kanban.ActionHeader = KanbanActionHeader;
+Kanban.Body = KanbanBody;
+Kanban.Section = KanbanSection;

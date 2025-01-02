@@ -1,0 +1,45 @@
+.actionHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+}
+
+.viewMode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  border: 1px solid var(--color-primary-4);
+  border-radius: var(--rounded-lg);
+}
+
+.selected path {
+  fill: var(--color-primary-4);
+}
+
+.addButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary-4);
+  border: 1px solid;
+  border-radius: var(--rounded-lg);
+}
+
+.addButton path {
+  fill: var(--color-neutral-1);
+}

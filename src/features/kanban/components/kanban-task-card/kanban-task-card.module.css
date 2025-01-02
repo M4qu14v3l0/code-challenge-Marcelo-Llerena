@@ -1,0 +1,17 @@
+.card {
+  width: 340px;
+  height: 208px;
+  background-color: var(--color-neutral-4);
+  border-radius: var(--rounded-lg);
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 500px) {
+  .card {
+    width: 100%;
+  }
+}

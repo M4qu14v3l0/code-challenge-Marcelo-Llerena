@@ -1,0 +1,13 @@
+.kanbanBody {
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+@media (min-width: 992px) {
+  .kanbanBody {
+    gap: 32px;
+    padding: 0px;
+  }
+}
