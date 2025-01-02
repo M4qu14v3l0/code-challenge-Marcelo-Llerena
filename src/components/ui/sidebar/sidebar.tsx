@@ -1,11 +1,12 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./sidebar.module.css";
-import { useState } from "react";
-import System from "@/svgs/system.svg?react";
+import System from "@/assets/svgs/system.svg?react";
+import TaskIcon from "@/assets/svgs/lines.svg?react";
 
 const links = [
-  { label: "Dashboard", to: "/dashboard" },
-  { label: "Task", to: "/my-tasks" },
+  { label: "Dashboard", to: "/dashboard", icon: <System /> },
+  { label: "Task", to: "/my-tasks", icon: <TaskIcon /> },
 ];
 
 export default function Sidebar() {
@@ -31,7 +32,7 @@ export default function Sidebar() {
               }`
             }
           >
-            <System className={styles.icon} />
+            <div className={styles.icon}>{link.icon}</div>
             <span>{link.label}</span>
           </NavLink>
         ))}
