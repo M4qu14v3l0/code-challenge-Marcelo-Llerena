@@ -1,6 +1,6 @@
 import styles from "./create-task.module.css";
 
-import PlusIcon from "@/svgs/plus.svg?react";
+import PlusIcon from "@/assets/svgs/plus.svg?react";
 
 export default function CreateTask() {
   return (

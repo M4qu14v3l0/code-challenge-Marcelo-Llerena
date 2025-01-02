@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./filter-input.module.css";
-import Search from "@/svgs/search.svg?react";
+import Search from "@/assets/svgs/search.svg?react";
 
 export default function FilterInput() {
   // After >= 500px pointer events are turn off
