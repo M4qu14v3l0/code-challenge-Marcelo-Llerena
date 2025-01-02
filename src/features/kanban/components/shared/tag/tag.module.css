@@ -1,0 +1,27 @@
+.tag {
+  width: fit-content;
+  height: 32px;
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+  letter-spacing: var(--letter-spacing);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: var(--rounded);
+
+  display: flex;
+  align-content: center;
+  gap: 8px;
+}
+
+.tagIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.tagIcon path {
+  fill: currentColor;
+}
