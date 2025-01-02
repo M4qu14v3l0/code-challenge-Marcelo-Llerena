@@ -38,4 +38,8 @@
     gap: 32px;
     padding: 32px;
   }
+
+  .main {
+    padding: 0;
+  }
 }
