@@ -1,0 +1,71 @@
+.triggerButton {
+  background-color: transparent;
+  border: none;
+}
+
+.triggerButton {
+  background-color: #94979a1a;
+  border: none;
+  width: 104px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-neutral-1);
+  gap: 8px;
+}
+
+.dropwDownContent {
+  width: 231px;
+  height: fit-content;
+  border-radius: var(--rounded-lg);
+  border: 1px solid var(--color-neutral-1);
+  background-color: var(--color-neutral-4);
+  padding: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdownItem {
+  display: flex;
+  position: relative;
+}
+
+.dropdownLabel {
+  height: 32px;
+  font-weight: 600;
+  font-size: var(--text-xl);
+  line-height: var(--leading-xl);
+  letter-spacing: var(--letter-spacing);
+  color: var(--color-neutral-2);
+}
+
+.checkbox {
+  opacity: 0;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+}
+
+.customCheckbox {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 8px;
+  background-color: transparent;
+  background-image: url("/src/assets/svgs/checkbox.svg");
+  background-size: cover;
+  transition: background-image 0.2s ease;
+}
+
+.checkbox:checked + .customCheckbox {
+  width: 18px;
+  height: 18px;
+  background-image: url("/src/assets/svgs/checkbox-checked.svg");
+}
+
+.label {
+  color: var(--color-neutral-1);
+}
