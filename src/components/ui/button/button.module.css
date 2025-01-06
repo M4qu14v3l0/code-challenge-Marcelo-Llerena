@@ -1,0 +1,38 @@
+.primary {
+  background-color: var(--color-primary-4);
+  transition: background-color 0.3s ease;
+}
+
+.outline {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.base {
+  color: var(--color-neutral-1);
+  font-weight: 400;
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+  letter-spacing: var(--letter-spacing);
+  border: none;
+  width: 62px;
+  height: 40px;
+  border-radius: var(--rounded-lg);
+}
+
+.outline:hover {
+  background-color: var(--color-neutral-2);
+}
+
+.primary:hover {
+  background-color: var(--color-primary-2);
+}
+
+.base:focus {
+  outline: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
