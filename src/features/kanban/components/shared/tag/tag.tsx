@@ -5,7 +5,7 @@ import { TaskTag } from "@/__generated__/types";
 
 interface TagProps {
   icon?: React.ReactElement;
-  text: string;
+  text: string | number;
   variant: TaskTag | "default";
 }
 

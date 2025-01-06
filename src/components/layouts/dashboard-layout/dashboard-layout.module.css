@@ -4,7 +4,7 @@
   overflow: hidden;
   display: grid;
   grid-template-areas:
-    "action-header"
+    "app-header"
     "sidebar"
     "main";
   grid-template-rows: 64px 42px auto;
@@ -21,7 +21,7 @@
   .container {
     padding: 24px;
     grid-template-areas:
-      "action-header"
+      "app-header"
       "main";
     grid-template-rows: 64px auto;
   }
@@ -31,7 +31,7 @@
   .container {
     display: grid;
     grid-template-areas:
-      "sidebar action-header"
+      "sidebar app-header"
       "sidebar main";
     grid-template-rows: 64px auto;
     grid-template-columns: 232px 1fr;
