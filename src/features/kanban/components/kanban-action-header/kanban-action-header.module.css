@@ -1,45 +1,102 @@
 .actionHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 48px;
+  display: none;
 }
 
-.viewMode {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (min-width: 992px) {
+  .actionHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+  }
+
+  .viewMode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iconContainer {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .selected {
+    border: 1px solid var(--color-primary-4);
+    border-radius: var(--rounded-lg);
+  }
+
+  .selected path {
+    fill: var(--color-primary-4);
+  }
+
+  .addButton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary-4);
+    border: none;
+    border-radius: var(--rounded-lg);
+  }
+
+  .addButton path {
+    fill: var(--color-neutral-1);
+  }
+  .dialogTrigger {
+    background-color: transparent;
+    border: none;
+  }
+
+  .dialogOverlay {
+    background-color: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .dialogContent {
+    display: flex;
+    flex-direction: column;
+    width: 572px;
+    height: 184px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--rounded-lg);
+    background-color: var(--color-neutral-4);
+    box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+      hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  }
+
+  /* .container {
+    gap: 32px;
+    padding: 0px;
+  } */
 }
 
-.iconContainer {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.selected {
-  border: 1px solid var(--color-primary-4);
-  border-radius: var(--rounded-lg);
-}
-
-.selected path {
-  fill: var(--color-primary-4);
-}
-
-.addButton {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-primary-4);
-  border: 1px solid;
-  border-radius: var(--rounded-lg);
-}
-
-.addButton path {
-  fill: var(--color-neutral-1);
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
