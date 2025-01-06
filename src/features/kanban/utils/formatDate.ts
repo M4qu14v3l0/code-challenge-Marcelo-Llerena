@@ -1,6 +1,11 @@
 import dayjs from "dayjs";
 
-export const formatDate = (dateString: string): string => {
+export const formatDateCustom = (dateString: string): string => {
   const date = dayjs(dateString);
   return date.format("D MMMM, YYYY").toUpperCase();
+};
+
+export const formateDateDatePicker = (dateString: Date) => {
+  const date = dayjs(dateString);
+  return date.format("MMM YYYY");
 };
