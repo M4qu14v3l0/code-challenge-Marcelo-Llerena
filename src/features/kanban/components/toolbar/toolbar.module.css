@@ -1,0 +1,13 @@
+.toolbar {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+  }
+}
