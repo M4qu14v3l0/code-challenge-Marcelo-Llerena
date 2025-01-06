@@ -3,6 +3,7 @@ import styles from "./message-by-status.module.css";
 
 interface MessageByStatus {
   status: Status;
+  variant: "boardView" | "listView";
 }
 
 const statusMessages: Record<Status, string> = {
@@ -14,11 +15,15 @@ const statusMessages: Record<Status, string> = {
   CANCELLED: "",
 };
 
-export default function MessageByStatus({ status }: MessageByStatus) {
+export default function MessageByStatus({ status, variant }: MessageByStatus) {
   const message = statusMessages[status];
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${
+        variant === "boardView" ? styles.containerBoard : styles.containerList
+      }`}
+    >
       <p>{message}</p>
     </div>
   );

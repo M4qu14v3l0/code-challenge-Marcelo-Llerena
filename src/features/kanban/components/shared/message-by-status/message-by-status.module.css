@@ -1,4 +1,4 @@
-.container {
+.containerBoard {
   height: 208px;
   width: 340px;
   display: flex;
@@ -14,12 +14,19 @@
   letter-spacing: var(--letter-spacing);
 }
 
-.container p {
+.containerBoard p {
   width: 100%;
 }
 
+.containerList {
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+  color: var(--color-neutral-2);
+  letter-spacing: var(--letter-spacing);
+}
+
 @media (min-width: 500px) {
-  .container {
+  .containerBoard {
     width: 100%;
   }
 }
