@@ -4,12 +4,12 @@ import Kanban from "@/features/kanban/kanban";
 export default function DashboardPage() {
   return (
     <Kanban>
-      <Kanban.ActionHeader />
-      <Kanban.Body>
-        <Kanban.Section title="Working" status={Status.Todo} />
-        <Kanban.Section title="In Progress" status={Status.InProgress} />
-        <Kanban.Section title="Completed" status={Status.Done} />
-      </Kanban.Body>
+      <Kanban.Toolbar />
+      <Kanban.Layout>
+        <Kanban.TaskGroup title="Working" status={Status.Todo} />
+        <Kanban.TaskGroup title="In Progress" status={Status.InProgress} />
+        <Kanban.TaskGroup title="Completed" status={Status.Done} />
+      </Kanban.Layout>
     </Kanban>
   );
 }
