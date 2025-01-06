@@ -1,0 +1,5 @@
+.cardTags {
+  height: 32px;
+  display: flex;
+  gap: 8px;
+}
