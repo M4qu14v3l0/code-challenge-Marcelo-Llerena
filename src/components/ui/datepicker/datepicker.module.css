@@ -1,0 +1,60 @@
+.datePicker {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #94979a1a;
+  padding-left: 10px;
+}
+
+.calendarIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.input {
+  position: relative;
+  background-color: transparent;
+  height: 32px;
+  border: none;
+  color: var(--color-neutral-1);
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 90px;
+  max-width: 161px;
+}
+
+.input::placeholder {
+  color: var(--color-neutral-1);
+}
+
+.customHeader {
+  background-color: var(--color-neutral-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  color: var(--color-neutral-1);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0px;
+}
+
+.navButton:hover path {
+  fill: var(--color-primary-4);
+}
+
+.chevronsContainer {
+  display: flex;
+  padding: 0px;
+}
