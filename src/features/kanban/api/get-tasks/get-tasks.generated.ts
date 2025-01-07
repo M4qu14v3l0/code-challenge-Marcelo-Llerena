@@ -146,17 +146,17 @@ export enum UserType {
   Candidate = 'CANDIDATE'
 }
 
-export type TaskFragment = { __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null };
+export type TaskFieldsFragment = { __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null };
 
 export type GetTasksQueryVariables = Types.Exact<{
-  input: Types.FilterTaskInput;
+  assigneeId?: Types.InputMaybe<Types.Scalars['String']['input']>;
 }>;
 
 
-export type GetTasksQuery = { __typename?: 'Query', tasks: Array<{ __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null }> };
+export type GetTasksQuery = { __typename?: 'Query', todoTasks: Array<{ __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null }>, inProgressTasks: Array<{ __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null }>, completedTasks: Array<{ __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null }> };
 
-export const TaskFragmentDoc = gql`
-    fragment Task on Task {
+export const TaskFieldsFragmentDoc = gql`
+    fragment TaskFields on Task {
   dueDate
   id
   name
@@ -172,12 +172,18 @@ export const TaskFragmentDoc = gql`
 }
     `;
 export const GetTasksDocument = gql`
-    query GetTasks($input: FilterTaskInput!) {
-  tasks(input: $input) {
-    ...Task
+    query GetTasks($assigneeId: String) {
+  todoTasks: tasks(input: {status: TODO, assigneeId: $assigneeId}) {
+    ...TaskFields
+  }
+  inProgressTasks: tasks(input: {status: IN_PROGRESS, assigneeId: $assigneeId}) {
+    ...TaskFields
+  }
+  completedTasks: tasks(input: {status: DONE, assigneeId: $assigneeId}) {
+    ...TaskFields
   }
 }
-    ${TaskFragmentDoc}`;
+    ${TaskFieldsFragmentDoc}`;
 
 /**
  * __useGetTasksQuery__
@@ -191,11 +197,11 @@ export const GetTasksDocument = gql`
  * @example
  * const { data, loading, error } = useGetTasksQuery({
  *   variables: {
- *      input: // value for 'input'
+ *      assigneeId: // value for 'assigneeId'
  *   },
  * });
  */
-export function useGetTasksQuery(baseOptions: Apollo.QueryHookOptions<GetTasksQuery, GetTasksQueryVariables> & ({ variables: GetTasksQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetTasksQuery(baseOptions?: Apollo.QueryHookOptions<GetTasksQuery, GetTasksQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<GetTasksQuery, GetTasksQueryVariables>(GetTasksDocument, options);
       }

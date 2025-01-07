@@ -1,4 +1,4 @@
-fragment Task on Task {
+fragment TaskFields on Task {
   dueDate
   id
   name
@@ -13,8 +13,16 @@ fragment Task on Task {
   }
 }
 
-query GetTasks($input: FilterTaskInput!) {
-  tasks(input: $input) {
-    ...Task
+query GetTasks($assigneeId: String) {
+  todoTasks: tasks(input: { status: TODO, assigneeId: $assigneeId }) {
+    ...TaskFields
+  }
+  inProgressTasks: tasks(
+    input: { status: IN_PROGRESS, assigneeId: $assigneeId }
+  ) {
+    ...TaskFields
+  }
+  completedTasks: tasks(input: { status: DONE, assigneeId: $assigneeId }) {
+    ...TaskFields
   }
 }
