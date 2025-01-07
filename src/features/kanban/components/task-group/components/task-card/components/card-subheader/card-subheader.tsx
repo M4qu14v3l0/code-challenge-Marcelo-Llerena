@@ -4,9 +4,11 @@ import { alertsTheme } from "@/features/kanban/theme/alerts-theme";
 import ClockIcon from "@/assets/svgs/clock.svg?react";
 import Tag from "@/features/kanban/components/shared/tag/tag";
 import { formatDateCustom } from "@/features/kanban/utils/formatDate";
+import { formatEstimatePoints } from "@/features/kanban/utils/format-estimate-points";
+import { TaskFieldsFragment } from "@/features/kanban/api/get-tasks/get-tasks.generated";
 
 interface SubHeaderProps {
-  points: string;
+  points: TaskFieldsFragment["pointEstimate"];
   date: Date;
 }
 
@@ -15,7 +17,7 @@ export default function CardSubHeader({ points, date }: SubHeaderProps) {
 
   return (
     <div className={styles.cardSubHeader}>
-      <span>{points} Pts</span>
+      <span>{formatEstimatePoints(points)} Pts</span>
       <Tag
         variant="default"
         text={newDate}
