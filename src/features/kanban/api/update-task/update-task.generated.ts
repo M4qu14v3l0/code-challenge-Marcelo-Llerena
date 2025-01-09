@@ -151,7 +151,7 @@ export type UpdateTaskMutationVariables = Types.Exact<{
 }>;
 
 
-export type UpdateTaskMutation = { __typename?: 'Mutation', updateTask: { __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', id: string } | null } };
+export type UpdateTaskMutation = { __typename?: 'Mutation', updateTask: { __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, tags: Array<Types.TaskTag>, status: Types.Status, position: number, assignee?: { __typename?: 'User', id: string } | null } };
 
 
 export const UpdateTaskDocument = gql`
@@ -165,6 +165,8 @@ export const UpdateTaskDocument = gql`
     name
     pointEstimate
     tags
+    status
+    position
   }
 }
     `;

@@ -13,16 +13,8 @@ fragment TaskFields on Task {
   }
 }
 
-query GetTasks($assigneeId: String) {
-  todoTasks: tasks(input: { status: TODO, assigneeId: $assigneeId }) {
-    ...TaskFields
-  }
-  inProgressTasks: tasks(
-    input: { status: IN_PROGRESS, assigneeId: $assigneeId }
-  ) {
-    ...TaskFields
-  }
-  completedTasks: tasks(input: { status: DONE, assigneeId: $assigneeId }) {
+query GetTasks($input: FilterTaskInput!) {
+  tasks(input: $input) {
     ...TaskFields
   }
 }

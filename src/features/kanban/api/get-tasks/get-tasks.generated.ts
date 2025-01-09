@@ -149,11 +149,11 @@ export enum UserType {
 export type TaskFieldsFragment = { __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null };
 
 export type GetTasksQueryVariables = Types.Exact<{
-  assigneeId?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  input: Types.FilterTaskInput;
 }>;
 
 
-export type GetTasksQuery = { __typename?: 'Query', todoTasks: Array<{ __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null }>, inProgressTasks: Array<{ __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null }>, completedTasks: Array<{ __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null }> };
+export type GetTasksQuery = { __typename?: 'Query', tasks: Array<{ __typename?: 'Task', dueDate: any, id: string, name: string, pointEstimate: Types.PointEstimate, position: number, status: Types.Status, tags: Array<Types.TaskTag>, assignee?: { __typename?: 'User', avatar?: string | null, fullName: string, id: string } | null }> };
 
 export const TaskFieldsFragmentDoc = gql`
     fragment TaskFields on Task {
@@ -172,14 +172,8 @@ export const TaskFieldsFragmentDoc = gql`
 }
     `;
 export const GetTasksDocument = gql`
-    query GetTasks($assigneeId: String) {
-  todoTasks: tasks(input: {status: TODO, assigneeId: $assigneeId}) {
-    ...TaskFields
-  }
-  inProgressTasks: tasks(input: {status: IN_PROGRESS, assigneeId: $assigneeId}) {
-    ...TaskFields
-  }
-  completedTasks: tasks(input: {status: DONE, assigneeId: $assigneeId}) {
+    query GetTasks($input: FilterTaskInput!) {
+  tasks(input: $input) {
     ...TaskFields
   }
 }
@@ -197,11 +191,11 @@ export const GetTasksDocument = gql`
  * @example
  * const { data, loading, error } = useGetTasksQuery({
  *   variables: {
- *      assigneeId: // value for 'assigneeId'
+ *      input: // value for 'input'
  *   },
  * });
  */
-export function useGetTasksQuery(baseOptions?: Apollo.QueryHookOptions<GetTasksQuery, GetTasksQueryVariables>) {
+export function useGetTasksQuery(baseOptions: Apollo.QueryHookOptions<GetTasksQuery, GetTasksQueryVariables> & ({ variables: GetTasksQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<GetTasksQuery, GetTasksQueryVariables>(GetTasksDocument, options);
       }

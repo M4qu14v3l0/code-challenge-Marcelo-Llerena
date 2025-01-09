@@ -8,5 +8,7 @@ mutation UpdateTask($input: UpdateTaskInput!) {
     name
     pointEstimate
     tags
+    status
+    position
   }
 }
