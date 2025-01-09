@@ -5,29 +5,19 @@ import Kanban from "@/features/kanban/kanban";
 
 export default function MyTaskPage() {
   const { profileId } = useGetProfile();
-  const { completedTasks, inProgressTasks, todoTask } = useKanbanTasks({
-    assigneeId: profileId,
-  });
+  const { tasksByStatus } = useKanbanTasks({ assigneeId: profileId });
 
   return (
     <Kanban>
       <Kanban.Toolbar />
       <Kanban.Layout>
-        <Kanban.TaskGroup
-          title="Working"
-          status={Status.Todo}
-          tasks={todoTask}
-        />
-        <Kanban.TaskGroup
-          title="In Progress"
-          status={Status.InProgress}
-          tasks={inProgressTasks}
-        />
-        <Kanban.TaskGroup
-          title="Completed"
-          status={Status.Done}
-          tasks={completedTasks}
-        />
+        {Object.entries(tasksByStatus).map(([status, tasks]) => (
+          <Kanban.TaskGroup
+            key={status}
+            tasks={tasks}
+            status={status as Status}
+          />
+        ))}
       </Kanban.Layout>
     </Kanban>
   );

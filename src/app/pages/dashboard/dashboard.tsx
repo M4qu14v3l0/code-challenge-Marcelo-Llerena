@@ -3,27 +3,21 @@ import { useKanbanTasks } from "@/features/kanban/hooks/use-kanban-tasks";
 import Kanban from "@/features/kanban/kanban";
 
 export default function DashboardPage() {
-  const { completedTasks, inProgressTasks, todoTask } = useKanbanTasks();
+  const { tasksByStatus, loading } = useKanbanTasks();
+
+  if (loading) return <h1>Loading Tasks</h1>;
 
   return (
     <Kanban>
       <Kanban.Toolbar />
       <Kanban.Layout>
-        <Kanban.TaskGroup
-          title="Working"
-          status={Status.Todo}
-          tasks={todoTask}
-        />
-        <Kanban.TaskGroup
-          title="In Progress"
-          status={Status.InProgress}
-          tasks={inProgressTasks}
-        />
-        <Kanban.TaskGroup
-          title="Completed"
-          status={Status.Done}
-          tasks={completedTasks}
-        />
+        {Object.entries(tasksByStatus).map(([status, tasks]) => (
+          <Kanban.TaskGroup
+            key={status}
+            tasks={tasks}
+            status={status as Status}
+          />
+        ))}
       </Kanban.Layout>
     </Kanban>
   );
