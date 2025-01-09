@@ -1,18 +1,21 @@
 import styles from "./create-task.module.css";
 import AddIcon from "@/assets/svgs/plus.svg?react";
-import ModalWrapper from "../../../shared/modal-wrapper/modal-wrapper";
 import TaskForm from "./task-form/task-form";
+import Modal from "@/components/ui/modal/modal";
+import { useState } from "react";
 
 export default function CreateTask() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <ModalWrapper
-      trigger={
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+      <Modal.Trigger className={`${styles.dialogTrigger}`}>
         <div className={styles.addButton}>
           <AddIcon />
         </div>
-      }
-      content={<TaskForm />}
-      title="Create Task"
-    />
+      </Modal.Trigger>
+      <Modal.Content title="Create Task">
+        <TaskForm setIsOpen={setIsOpen} />
+      </Modal.Content>
+    </Modal>
   );
 }

@@ -13,6 +13,7 @@
   fill: var(--color-neutral-1);
 }
 
-/*         <div className={styles.addButton}>
-          <AddIcon />
-        </div> */
+.dialogTrigger {
+  background-color: transparent;
+  border: none;
+}
