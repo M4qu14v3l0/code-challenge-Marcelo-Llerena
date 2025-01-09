@@ -5,6 +5,7 @@ import { useCreateTask } from "./hooks/use-create-task";
 import FormView from "./components/form-view/form-view";
 import { PointEstimate, TaskTag } from "@/__generated__/types";
 import { useUpdateTask } from "@/features/kanban/components/task-group/components/task-card/hooks/use-update-task";
+import dayjs from "dayjs";
 
 interface Task {
   id: string;
@@ -17,9 +18,10 @@ interface Task {
 
 interface TaskFormProps {
   task?: Task;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function TaskForm({ task }: TaskFormProps) {
+export default function TaskForm({ task, setIsOpen }: TaskFormProps) {
   const { register, handleSubmit, control } = useForm<TaskFormValues>({
     resolver: zodResolver(TaskSchema),
     defaultValues: task
@@ -28,7 +30,7 @@ export default function TaskForm({ task }: TaskFormProps) {
           pointEstimate: task.pointsEstimate,
           assignee: task.assigneeId,
           tags: task.tags,
-          dueDate: task.dueDate,
+          dueDate: dayjs(task.dueDate).toDate(),
         }
       : {
           tags: [],
@@ -44,6 +46,7 @@ export default function TaskForm({ task }: TaskFormProps) {
     } else {
       await create(formData);
     }
+    setIsOpen(false);
   };
 
   return (

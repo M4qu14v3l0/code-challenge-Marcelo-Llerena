@@ -10,8 +10,11 @@ import { useGetUserOptions } from "../../hooks/use-get-user-options";
 import { TaskFormValues } from "../../schema/task-squema";
 import { tagOptions } from "../../constant/tag-options";
 import { estimateOptions } from "../../constant/estimate-options";
+
 import styles from "./form-view.module.css";
 import Button from "@/components/ui/button/button";
+
+import { DialogClose } from "@radix-ui/react-dialog";
 
 interface FormViewProps {
   onSubmit: React.FormEventHandler<HTMLFormElement>;
@@ -86,7 +89,9 @@ export default function FormView({
       </div>
 
       <div className={styles.buttons}>
-        <Button label="Delete" variant="outline" onClick={() => {}} />
+        <DialogClose className={styles.dialogClose}>
+          <Button label="Cancel" variant="outline" />
+        </DialogClose>
         <Button label="Create" type="submit" />
       </div>
     </form>
