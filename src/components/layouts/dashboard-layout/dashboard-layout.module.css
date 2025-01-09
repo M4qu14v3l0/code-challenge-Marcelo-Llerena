@@ -12,8 +12,8 @@
 
 .main {
   grid-area: main;
-  overflow-x: scroll;
-  scrollbar-width: none;
+  overflow: hidden;
+  height: 100%;
   padding: 20px 16px 0px 16px;
 }
 
