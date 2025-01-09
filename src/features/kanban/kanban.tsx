@@ -4,8 +4,6 @@ import { Toolbar } from "./components/toolbar/toolbar";
 import { Layout } from "./components/layout/layout";
 import { TaskGroup } from "./components/task-group/task-group";
 import { ViewMode } from "./interfaces/kanban.interfaces";
-import styles from "./kanban.module.css";
-
 interface KanbanProps {
   children: ReactNode;
 }
@@ -15,7 +13,7 @@ export default function Kanban({ children }: KanbanProps) {
 
   return (
     <KanbanContext.Provider value={{ viewMode, setViewMode }}>
-      <div className={styles.kanban}>{children}</div>
+      {children}
     </KanbanContext.Provider>
   );
 }
