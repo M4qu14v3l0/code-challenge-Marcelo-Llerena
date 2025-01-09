@@ -499,6 +499,14 @@
     "@dnd-kit/utilities" "^3.2.2"
     tslib "^2.0.0"
 
+"@dnd-kit/sortable@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@dnd-kit/sortable/-/sortable-10.0.0.tgz#1f9382b90d835cd5c65d92824fa9dafb78c4c3e8"
+  integrity sha512-+xqhmIIzvAYMGfBYYnbKuNicfSsk4RksY2XdmJhT+HAC01nix6fHCztU68jooFiMUB01Ky3F0FyOvhG/BZrWkg==
+  dependencies:
+    "@dnd-kit/utilities" "^3.2.2"
+    tslib "^2.0.0"
+
 "@dnd-kit/utilities@^3.2.2":
   version "3.2.2"
   resolved "https://registry.npmjs.org/@dnd-kit/utilities/-/utilities-3.2.2.tgz"
@@ -2020,6 +2028,11 @@
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.15.tgz"
   integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
 
+"@types/lodash@^4.17.14":
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.14.tgz#bafc053533f4cdc5fcc9635af46a963c1f3deaff"
+  integrity sha512-jsxagdikDiDBeIRaPYtArcT8my4tN1og7MtMRquFT3XNA6axxyHDRUemqDz/taRDdOUn0GnGHRCuff4q48sW9A==
+
 "@types/node@*":
   version "22.10.2"
   resolved "https://registry.npmjs.org/@types/node/-/node-22.10.2.tgz"
@@ -3295,6 +3308,11 @@ inquirer@^8.0.0:
     through "^2.3.6"
     wrap-ansi "^6.0.1"
 
+install@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/install/-/install-0.13.0.tgz#6af6e9da9dd0987de2ab420f78e60d9c17260776"
+  integrity sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==
+
 invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz"
@@ -3515,7 +3533,7 @@ lodash.sortby@^4.7.0:
 
 lodash@^4.17.20, lodash@^4.17.21, lodash@~4.17.0:
   version "4.17.21"
-  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^4.0.0, log-symbols@^4.1.0:
