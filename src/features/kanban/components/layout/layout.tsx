@@ -15,7 +15,7 @@ import { TaskFieldsFragment } from "../../api/get-tasks/get-tasks.generated";
 import { createPortal } from "react-dom";
 import debounce from "lodash/debounce";
 import { Status } from "@/__generated__/types";
-import { useSyncServerOnDrop } from "../../hooks/use-sync-server-on-drop";
+// import { useSyncServerOnDrop } from "../../hooks/use-sync-server-on-drop";
 import { useGetFinalTaskData } from "../../hooks/use-get-final-task-data";
 import { useLocalResetPosition } from "../../hooks/use-local-reset-position";
 
@@ -29,7 +29,7 @@ export const Layout = ({ children }: LayoutProps) => {
   const [activeTask, setActiveTask] = useState<UniqueIdentifier>();
   const [taskData, setTaskData] = useState<TaskFieldsFragment>();
   const { forceLocalReorder } = useLocalReorder();
-  const { finalizeReorder } = useSyncServerOnDrop();
+  // const { finalizeReorder } = useSyncServerOnDrop();
   const { getFinalCardData } = useGetFinalTaskData();
   const { resetPositioning } = useLocalResetPosition();
 
