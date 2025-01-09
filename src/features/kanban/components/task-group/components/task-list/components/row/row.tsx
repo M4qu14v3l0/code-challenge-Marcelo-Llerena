@@ -1,12 +1,12 @@
-import { TaskFragment } from "@/features/kanban/api/get-tasks/get-tasks.generated";
 import { formatEstimatePoints } from "@/features/kanban/utils/format-estimate-points";
 import { formatDateCustom } from "@/features/kanban/utils/formatDate";
 import { capitalizeText } from "@/features/kanban/utils/capitalize-text";
 import Tag from "@/features/kanban/components/shared/tag/tag";
 import styles from "./row.module.css";
+import { TaskFieldsFragment } from "@/features/kanban/api/get-tasks/get-tasks.generated";
 
 interface RowProps {
-  task: TaskFragment;
+  task: TaskFieldsFragment;
 }
 
 export default function Row({ task }: RowProps) {

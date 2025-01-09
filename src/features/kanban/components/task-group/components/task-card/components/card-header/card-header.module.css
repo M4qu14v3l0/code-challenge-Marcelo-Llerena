@@ -1,6 +1,6 @@
 .cardHeader {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -8,47 +8,6 @@
   font-weight: 700;
   font-size: var(--text-lg);
   line-height: var(--leading-lg);
-  letter-spacing: var(--letter-spacing);
-  color: var(--color-neutral-1);
-}
-
-.popoverTrigger {
-  background-color: transparent;
-  border: none;
-}
-
-.moreIcon {
-  cursor: pointer;
-}
-
-.popoverContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--rounded-lg);
-  border: 1px solid var(--color-neutral-2);
-  padding: 0px;
-  width: 138px;
-  height: 88px;
-  background-color: var(--color-neutral-3);
-}
-
-.buttonIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  gap: 8px;
-  width: 100%;
-  cursor: pointer;
-
-  background-color: transparent;
-  border: none;
-
-  font-weight: 400;
-  font-size: var(--text-md);
-  line-height: var(--leading-md);
   letter-spacing: var(--letter-spacing);
   color: var(--color-neutral-1);
 }

@@ -13,19 +13,29 @@
   flex-direction: column;
   gap: 16px;
   min-width: 340px;
-  max-height: 640px;
+  height: 78vh;
   overflow-y: scroll;
-  scrollbar-width: none;
+}
+
+.group::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s ease;
+}
+
+.group::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 @media (min-width: 500px) {
   .taskGroup {
-    width: 100%;
+    display: block;
+    height: auto;
   }
 }
 
 @media (min-width: 992px) {
   .group {
-    max-height: 100%;
+    overflow-y: scroll;
   }
 }

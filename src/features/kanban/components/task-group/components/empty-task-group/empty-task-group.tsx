@@ -1,29 +1,28 @@
 import { ViewMode } from "@/features/kanban/interfaces/kanban.interfaces";
 import styles from "./empty-task-group.module.css";
 import MessageByStatus from "@/features/kanban/components/shared/message-by-status/message-by-status";
-import { Status } from "@/__generated__/types";
 
 interface EmptyTaskGroupProps {
-  title: string;
-  status: Status;
   viewMode: ViewMode;
+  message: string;
+  title: string;
 }
 
 export default function EmptyTaskGroup({
   viewMode,
+  message,
   title,
-  status,
 }: EmptyTaskGroupProps) {
   return viewMode === "board" ? (
     <div className={styles.taskGroup}>
       <h2 className={styles.titleGroup}>{title} (0)</h2>
       <div className={styles.group}>
-        <MessageByStatus status={status} variant="boardView" />
+        <MessageByStatus message={message} variant="boardView" />
       </div>
     </div>
   ) : (
     <div className={styles.accordionEmpty}>
-      <MessageByStatus status={status} variant="listView" />
+      <MessageByStatus message={message} variant="listView" />
     </div>
   );
 }

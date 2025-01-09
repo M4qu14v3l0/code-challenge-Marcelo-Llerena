@@ -13,7 +13,7 @@ interface TaskListProps {
 }
 
 export default function TaskList({ children, tasks }: TaskListProps) {
-  const [isOpenAccordion, setIsOpenAccordion] = useState(false);
+  const [isOpenAccordion, setIsOpenAccordion] = useState(true);
 
   return (
     <TaskListContext.Provider
