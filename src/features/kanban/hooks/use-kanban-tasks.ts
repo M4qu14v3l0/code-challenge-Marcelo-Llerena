@@ -1,3 +1,4 @@
+import { useGetTasksByStatus } from "@/hooks/get-tasks-by-status";
 import { useGetTasksQuery } from "../api/get-tasks/get-tasks.generated";
 
 interface UseKanbanTasksProps {
@@ -6,13 +7,18 @@ interface UseKanbanTasksProps {
 
 export const useKanbanTasks = ({ assigneeId }: UseKanbanTasksProps = {}) => {
   const { loading, error, data } = useGetTasksQuery({
-    variables: { assigneeId },
+    variables: {
+      input: {
+        assigneeId: assigneeId || undefined,
+      },
+    },
   });
 
+  const tasks = data?.tasks || [];
+  const { tasksByStatus } = useGetTasksByStatus(tasks);
+
   return {
-    todoTask: data?.todoTasks || [],
-    inProgressTasks: data?.inProgressTasks || [],
-    completedTasks: data?.completedTasks || [],
+    tasksByStatus,
     loading,
     error,
   };
