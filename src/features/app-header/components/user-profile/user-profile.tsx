@@ -7,16 +7,26 @@ import { NavLink } from "react-router-dom";
 import PersonIcon from "@/assets/svgs/person.svg?react";
 import MoonIcon from "@/assets/svgs/moon.svg?react";
 import SunIcon from "@/assets/svgs/sun.svg?react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetProfile } from "@/hooks/use-get-profile";
 
 export default function UserProfile() {
   const { profileData } = useGetProfile();
 
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "light") {
+      setLightMode(true);
+      document.body.classList.add("light-mode");
+    }
+  }, []);
+
   const [lightMode, setLightMode] = useState(false);
   const toggleTheme = () => {
     setLightMode(!lightMode);
+    const newTheme = !lightMode ? "light" : "dark";
     document.body.classList.toggle("light-mode", !lightMode);
+    localStorage.setItem("theme", newTheme);
   };
 
   return (
