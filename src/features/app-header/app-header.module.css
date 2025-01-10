@@ -9,6 +9,10 @@
   background-color: var(--color-neutral-4);
 }
 
+.appHeader path {
+  fill: var(--color-neutral-2);
+}
+
 @media (min-width: 500px) {
   .appHeader {
     padding: 12px 24px;

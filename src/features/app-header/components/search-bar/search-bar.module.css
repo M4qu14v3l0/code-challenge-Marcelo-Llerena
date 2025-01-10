@@ -1,24 +1,32 @@
 .searchInput::-webkit-input-placeholder {
+  color: var(--color-neutral-2);
   font-family: "SanFranciscoProDisplay";
 }
 
 .searchInput:-ms-input-placeholder {
   font-family: "SanFranciscoProDisplay";
+  color: var(--color-neutral-2);
 }
 
 .searchInput:-moz-placeholder {
   font-family: "SanFranciscoProDisplay";
+  color: var(--color-neutral-2);
 }
 
 .searchInput::-moz-placeholder {
   font-family: "SanFranciscoProDisplay";
+  color: var(--color-neutral-2);
 }
 
 .searchBar {
   display: flex;
   gap: 20px;
   justify-content: end;
-  min-width: 260px;
+  min-width: 180px;
+}
+
+.searchBar path {
+  fill: var(--color-neutral-2);
 }
 
 .searchInput {
