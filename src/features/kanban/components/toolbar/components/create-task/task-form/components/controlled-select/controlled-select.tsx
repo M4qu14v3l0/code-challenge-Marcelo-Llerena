@@ -1,6 +1,13 @@
 import SelectComboBox from "@/components/ui/combo-box/select-combo-box";
 import { ReactNode } from "react";
-import { Control, Controller, FieldValues, Path } from "react-hook-form";
+import {
+  Control,
+  Controller,
+  FieldErrors,
+  FieldValues,
+  Path,
+} from "react-hook-form";
+import { TaskFormValues } from "../../schema/task-squema";
 
 interface Option {
   value: string;
@@ -16,6 +23,7 @@ interface ControlledSelectProps<T extends FieldValues> {
   placeholder?: React.ReactNode;
   label: string;
   variant: "points" | "assignee";
+  errors: FieldErrors<TaskFormValues> | undefined;
 }
 
 export const ControlledSelect = <T extends FieldValues>({
@@ -25,6 +33,7 @@ export const ControlledSelect = <T extends FieldValues>({
   placeholder,
   label,
   variant,
+  errors,
 }: ControlledSelectProps<T>) => {
   return (
     <Controller
@@ -38,6 +47,7 @@ export const ControlledSelect = <T extends FieldValues>({
           onChange={onChange}
           value={value}
           variant={variant}
+          errors={errors}
         />
       )}
     />

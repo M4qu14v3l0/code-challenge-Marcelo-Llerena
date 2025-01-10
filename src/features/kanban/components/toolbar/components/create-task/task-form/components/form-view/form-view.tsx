@@ -1,4 +1,9 @@
-import { Control, Controller, UseFormRegister } from "react-hook-form";
+import {
+  Control,
+  Controller,
+  FieldErrors,
+  UseFormRegister,
+} from "react-hook-form";
 
 import DropDownMenu from "@/components/ui/dropdown-menu/dropdown-menu";
 import Datepicker from "@/components/ui/datepicker/datepicker";
@@ -20,21 +25,28 @@ interface FormViewProps {
   onSubmit: React.FormEventHandler<HTMLFormElement>;
   register: UseFormRegister<TaskFormValues>;
   control: Control<TaskFormValues>;
+  errors: FieldErrors<TaskFormValues> | undefined;
 }
 
 export default function FormView({
   onSubmit,
   register,
   control,
+  errors,
 }: FormViewProps) {
   const { userOptions } = useGetUserOptions();
   return (
     <form className={styles.formView} onSubmit={onSubmit}>
-      <input
-        placeholder="Task Title"
-        className={styles.input}
-        {...register("name")}
-      />
+      <div className={styles.inputContainer}>
+        <input
+          placeholder="Task Title"
+          className={`${styles.input} ${errors?.name && styles.isError}`}
+          {...register("name")}
+        />
+        {errors?.name && (
+          <span className={styles.errorMessage}>{errors.name.message}</span>
+        )}
+      </div>
 
       <div className={styles.comboBoxes}>
         <ControlledSelect
@@ -49,6 +61,7 @@ export default function FormView({
           }
           variant="points"
           label="Estimate"
+          errors={errors}
         />
 
         <ControlledSelect
@@ -63,6 +76,7 @@ export default function FormView({
           }
           variant="assignee"
           label="Assign To..."
+          errors={errors}
         />
 
         <Controller
@@ -75,6 +89,7 @@ export default function FormView({
               options={tagOptions}
               onChange={onChange}
               value={value}
+              errors={errors}
             />
           )}
         />
@@ -83,7 +98,7 @@ export default function FormView({
           control={control}
           name="dueDate"
           render={({ field: { onChange, value } }) => (
-            <Datepicker onChange={onChange} value={value} />
+            <Datepicker onChange={onChange} value={value} errors={errors} />
           )}
         />
       </div>
