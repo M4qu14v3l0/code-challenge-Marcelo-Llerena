@@ -4,6 +4,16 @@ export const statusColumnData: Record<
   Status,
   { emptyMessage: string; title: string }
 > = {
+  BACKLOG: {
+    emptyMessage:
+      "Your backlog is currently empty! Stay ready, more tasks are on their way.",
+    title: "Backlog",
+  },
+  TODO: {
+    emptyMessage:
+      "No tasks assigned yet. Stay tuned for your upcoming assignments!",
+    title: "To Do",
+  },
   IN_PROGRESS: {
     emptyMessage:
       "No tasks in progress right now. Focus on starting your next work!",
@@ -12,19 +22,11 @@ export const statusColumnData: Record<
   DONE: {
     emptyMessage:
       "Great! No completed tasks for now. Get ready for your next tasks!",
-    title: "Completed",
-  },
-  TODO: {
-    emptyMessage:
-      "No tasks assigned yet. Stay tuned for your upcoming assignments!",
-    title: "Working",
-  },
-  BACKLOG: {
-    emptyMessage: "No Backlog Tasks",
-    title: "Backlog",
+    title: "Done",
   },
   CANCELLED: {
-    emptyMessage: "No Cancelled Tasks",
+    emptyMessage:
+      "There are no canceled tasks at the moment. Keep up the great work!",
     title: "Cancelled",
   },
 };
