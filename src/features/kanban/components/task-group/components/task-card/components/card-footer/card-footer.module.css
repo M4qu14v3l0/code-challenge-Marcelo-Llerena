@@ -1,0 +1,23 @@
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskDetails {
+  display: flex;
+  align-items: center;
+  width: 106px;
+  justify-content: space-between;
+}
+
+.taskDetails path {
+  fill: var(--color-neutral-1);
+}
+
+.taskDetails span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-neutral-1);
+}

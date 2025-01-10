@@ -1,0 +1,130 @@
+.searchInput::-webkit-input-placeholder {
+  color: var(--color-neutral-2);
+  font-family: "SanFranciscoProDisplay";
+}
+
+.searchInput:-ms-input-placeholder {
+  font-family: "SanFranciscoProDisplay";
+  color: var(--color-neutral-2);
+}
+
+.searchInput:-moz-placeholder {
+  font-family: "SanFranciscoProDisplay";
+  color: var(--color-neutral-2);
+}
+
+.searchInput::-moz-placeholder {
+  font-family: "SanFranciscoProDisplay";
+  color: var(--color-neutral-2);
+}
+
+.searchBar {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+  min-width: 180px;
+  position: relative;
+}
+
+.searchBar path {
+  fill: var(--color-neutral-2);
+}
+
+.searchInput {
+  display: none;
+}
+
+.inputShow {
+  display: block;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 80%;
+  color: var(--color-neutral-2);
+  border-bottom: 1px solid var(--color-neutral-2);
+  -webkit-animation: scale-in-center 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.deleteIcon {
+  display: none;
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteIcon:hover path {
+  fill: var(--color-primary-4);
+}
+
+.showDeleteIcon {
+  display: block;
+}
+
+@media (min-width: 500px) {
+  .searchBar {
+    flex-direction: row-reverse;
+    grid-area: search-bar;
+    justify-content: start;
+    width: 100%;
+    height: 24px;
+    gap: 24px;
+    display: flex;
+    font-family: SanFranciscoProDisplay;
+  }
+
+  .searchInput {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 80%;
+    font-weight: 400;
+    color: var(--color-neutral-2);
+    font-size: var(--text-md);
+    line-height: var(--leading-md);
+    letter-spacing: var(--letter-spacing);
+  }
+
+  .searchIcon {
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .searchIcon {
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}

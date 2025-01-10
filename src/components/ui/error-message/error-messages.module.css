@@ -1,0 +1,8 @@
+.messageError {
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--text-lg);
+  line-height: var(--leading-lg);
+  color: var(--color-neutral-2);
+  letter-spacing: var(--letter-spacing);
+}

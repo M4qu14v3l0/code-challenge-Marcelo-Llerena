@@ -1,0 +1,39 @@
+.layout {
+  position: relative;
+  height: 100%;
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.layout::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s ease;
+}
+
+.layout::-webkit-scrollbar-thumb:hover {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: background-color 0.5s ease;
+}
+
+.layoutList {
+  margin-top: 24px;
+  display: flex;
+  height: 75vh;
+  flex-direction: column;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  gap: 16px;
+}
+
+@media (min-width: 992px) {
+  .layout {
+    gap: 32px;
+    padding: 0px;
+  }
+}

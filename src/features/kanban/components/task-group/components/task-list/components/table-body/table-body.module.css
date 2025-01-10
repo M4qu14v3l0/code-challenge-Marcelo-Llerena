@@ -1,0 +1,30 @@
+.panel {
+  border-radius: var(--rounded);
+  background-color: var(--color-neutral-4);
+  overflow-y: scroll;
+  max-height: 1000px;
+  min-width: 980px;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.panel::-webkit-scrollbar {
+  display: none;
+}
+.panel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.isClose {
+  border: 0px solid var(--color-neutral-3);
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  max-height: 0;
+  opacity: 0;
+}
+
+.isOpen {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  opacity: 1;
+}

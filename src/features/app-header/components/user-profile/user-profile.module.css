@@ -1,0 +1,63 @@
+.userProfile {
+  grid-area: profile;
+}
+
+.trigger {
+  all: unset;
+}
+
+.content {
+  background-color: var(--color-neutral-4);
+  width: 240px;
+  height: 140px;
+  padding: 16px 13px;
+  color: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-3);
+  border-radius: var(--rounded-lg);
+}
+
+.profile {
+  display: flex;
+  gap: 14px;
+}
+
+.fullName {
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+  letter-spacing: var(--letter-spacing);
+  font-weight: 400;
+}
+
+.email {
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  letter-spacing: var(--letter-spacing);
+  font-weight: 400;
+  color: var(--color-neutral-2);
+}
+
+.actionsContainer {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-neutral-3);
+  margin-top: 2px;
+}
+
+.action {
+  height: 36px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  color: var(--color-neutral-1);
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  letter-spacing: var(--letter-spacing);
+  font-weight: 400;
+  color: var(--color-neutral-1);
+  text-decoration: none;
+  padding: 0;
+  cursor: pointer;
+}

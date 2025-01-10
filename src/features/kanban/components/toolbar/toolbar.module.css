@@ -1,0 +1,21 @@
+/* .toolbar {
+  display: none;
+} */
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 0px;
+}
+
+@media (min-width: 763px) {
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+  }
+}

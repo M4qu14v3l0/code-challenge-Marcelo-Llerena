@@ -1,0 +1,103 @@
+.formView {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.comboBoxes {
+  display: flex;
+  gap: 16px;
+}
+
+.input {
+  height: 32px;
+  color: var(--color-neutral-1);
+  background-color: transparent;
+  border: none;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--leading-xl);
+  letter-spacing: var(--letter-spacing);
+  outline: none;
+}
+
+.input:focus {
+  box-shadow: 0 2px 2px -2px var(--color-neutral-1);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: 0px solid var(--color-neutral-1);
+  -webkit-text-fill-color: var(--color-neutral-1);
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-neutral-opacity) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  letter-spacing: var(--letter-spacing-sm);
+  font-style: 400;
+  color: var(--color-primary-4);
+}
+
+.isError {
+  border: 1px solid var(--color-primary-4);
+}
+
+.selectValue {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-neutral-1);
+  gap: 8px;
+}
+.selectValue path {
+  fill: var(--color-neutral-1);
+}
+
+.buttons {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.dialogClose {
+  all: unset;
+}
+
+@media (max-width: 616px) {
+  .formView {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  .comboBoxes {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .buttons {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+}

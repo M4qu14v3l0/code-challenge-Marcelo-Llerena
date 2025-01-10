@@ -1,0 +1,35 @@
+.row {
+  display: grid;
+  grid-template-columns: auto 190px 140px 168px 180px;
+  align-items: center;
+  height: 56px;
+  border-bottom: 1px solid var(--color-neutral-3);
+}
+
+.childRow {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--color-neutral-1);
+  font-size: var(--text-md);
+  line-height: var(--leading-md);
+  letter-spacing: var(--letter-spacing);
+  font-weight: 400;
+  margin: 4px 0px;
+  border-left: 1px solid var(--color-neutral-3);
+  border-right: 1px solid var(--color-neutral-3);
+  padding-left: 8px;
+  gap: 8px;
+}
+
+.nameRow {
+  padding-left: 40px;
+  gap: 8px;
+  text-transform: capitalize;
+}
+
+.tagRow {
+  gap: 8px;
+  padding-right: 8px;
+  justify-content: space-between;
+}

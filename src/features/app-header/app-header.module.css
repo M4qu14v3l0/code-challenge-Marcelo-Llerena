@@ -1,0 +1,33 @@
+.appHeader {
+  grid-area: app-header;
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 16px 24px;
+  background-color: var(--color-neutral-4);
+}
+
+.appHeader path {
+  fill: var(--color-neutral-2);
+}
+
+@media (min-width: 500px) {
+  .appHeader {
+    padding: 12px 24px;
+    display: grid;
+    grid-template-columns: 1fr 44px 44px;
+    grid-template-areas: "search-bar notification profile";
+  }
+}
+
+@media (min-width: 768px) {
+  .appHeader {
+    border-radius: var(--rounded-2xl);
+  }
+
+  .hide {
+    display: none;
+  }
+}

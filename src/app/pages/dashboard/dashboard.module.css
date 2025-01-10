@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 16px;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+@media (min-width: 992px) {
+  .container {
+    gap: 32px;
+    padding: 0px;
+  }
+}

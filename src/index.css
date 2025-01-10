@@ -1,68 +1,158 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@font-face {
+  font-family: "SanFranciscoProDisplay";
+  src: url("./assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SanFranciscoProDisplay";
+  src: url("./assets/fonts/sf-pro-display/SFPRODISPLAYMEDIUM.OTF");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SanFranciscoProDisplay";
+  src: url("./assets/fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF");
+  font-weight: 800;
+  font-style: normal;
+}
+
+:root {
+  font-family: "Roboto";
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-neutral-1: #ffffff;
+  --color-neutral-2: #94979a;
+  --color-neutral-3: #393d41;
+  --color-neutral-4: #2c2f33;
+  --color-neutral-5: #222528;
+  --color-neutral-opacity: rgb(148, 151, 154, 0.1);
+
+  --color-primary-1: #f4ccc8;
+  --color-primary-2: #eba59e;
+  --color-primary-3: #e27d73;
+  --color-primary-4: #da584b;
+  --color-primary-opacity: rgb(218, 88, 75, 0.1);
+
+  --color-secondary-1: #c8e1bc;
+  --color-secondary-2: #aad199;
+  --color-secondary-3: #8dc275;
+  --color-secondary-4: #70b252;
+  --color-secondary-opacity: rgb(112, 178, 82, 0.1);
+
+  --color-tertiary-1: #f9eed7;
+  --color-tertiary-2: #f2daab;
+  --color-tertiary-3: #ebc77f;
+  --color-tertiary-4: #e5b454;
+  --color-tertiary-opacity: rgb(229, 180, 84, 0.1);
+
+  --color-react: #70b2d9;
+  --color-react-opacity: rgb(112, 178, 217, 0.1);
+  --color-node_js: #9a52b2;
+  --color-node_js-opacity: rgb(154, 82, 178, 0.1);
+  --color-android: #e5b454;
+  --color-android-opacity: rgb(229, 180, 84, 0.1);
+  --color-ios: #70b252;
+  --color-ios-opacity: rgb(112, 178, 82, 0.1);
+  --color-rails: #da584b;
+  --color-rails-opacity: rgb(218, 88, 75, 0.1);
+
+  --letter-spacing: 0.75px;
+  --letter-spacing-sm: 0.25px;
+  --letter-spacing-head: 1px;
+
+  --head-md: 48px;
+  --leading-head-md: 56px;
+
+  --head-sm: 40px;
+  --leading-head-sm: 48px;
+
+  --head: 24px;
+  --leading-head: 32px;
+
+  --text-xl: 20px;
+  --leading-xl: 32px;
+
+  --text-lg: 18px;
+  --leading-lg: 32px;
+
+  --text-md: 15px;
+  --leading-md: 24px;
+
+  --text-sm: 13px;
+  --leading-sm: 22px;
+
+  --leading: 20px;
+
+  --rounded-full: 50%;
+  --rounded-3xl: 24px;
+  --rounded-2xl: 16px;
+  --rounded-xl: 12px;
+  --rounded-lg: 8px;
+  --rounded-md: 6px;
+  --rounded: 4px;
+  --rounded-sm: 2px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+body.light-mode {
+  --color-neutral-1: #0a100d;
+  --color-neutral-2: #626c66;
+  --color-neutral-3: #403d39;
+  --color-neutral-4: #d4e09b;
+  --color-neutral-5: #f6f4d2;
+
+  --color-primary-2: #cbdfbd;
+  --color-primary-3: #d4e09b;
+  --color-primary-4: #73a580;
+  --color-primary-opacity: rgb(115, 165, 128, 0.1);
 }
-a:hover {
-  color: #535bf2;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--color-neutral-5);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+::-webkit-scrollbar {
+  border-radius: 3px;
+  width: 8px;
+  height: 8px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: background-color 0.5s ease;
 }
 
-@media (prefers-color-scheme: light) {
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+@media (min-width: 992px) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    font-family: SanFranciscoProDisplay;
   }
 }

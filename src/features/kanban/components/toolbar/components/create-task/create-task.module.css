@@ -1,0 +1,31 @@
+.addButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary-4);
+  border: none;
+  border-radius: var(--rounded-lg);
+}
+
+.addButton path {
+  fill: var(--color-neutral-1);
+}
+
+.dialogTrigger {
+  background-color: transparent;
+  border: none;
+}
+
+@media (max-width: 763px) {
+  .addButton {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    z-index: 30;
+  }
+}

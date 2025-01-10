@@ -1,0 +1,52 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.comboBoxes {
+  display: flex;
+  gap: 16px;
+}
+
+.input {
+  height: 32px;
+  color: var(--color-neutral-1);
+  background-color: transparent;
+  border: none;
+}
+
+.selectValue {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 8px;
+}
+
+.selectContentEstimate {
+  width: 122px;
+  height: fit-content;
+  border-radius: var(--rounded-lg);
+  border: 1px solid var(--color-neutral-1);
+  background-color: var(--color-neutral-4);
+  padding: 8px;
+}
+
+.selectContentAssignee {
+  width: 239px;
+  height: fit-content;
+  border-radius: var(--rounded-lg);
+  border: 1px solid var(--color-neutral-1);
+  background-color: var(--color-neutral-4);
+  padding: 8px;
+}
+
+.buttons {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}

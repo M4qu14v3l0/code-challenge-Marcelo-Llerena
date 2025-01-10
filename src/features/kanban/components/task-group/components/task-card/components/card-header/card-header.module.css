@@ -1,0 +1,13 @@
+.cardHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cardHeaderTitle {
+  font-weight: 700;
+  font-size: var(--text-lg);
+  line-height: var(--leading-lg);
+  letter-spacing: var(--letter-spacing);
+  color: var(--color-neutral-1);
+}

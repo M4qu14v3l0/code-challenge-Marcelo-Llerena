@@ -1,50 +1,101 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Task Manager
 
-Currently, two official plugins are available:
+<img src="/public//images//ravn-logo-bg-black.svg" alt="Imagen de ejemplo" width="200" backgroundColor='black'>
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Project Setup
 
-## Expanding the ESLint configuration
+Follow these steps to clone the repository, install dependencies, and configure the required environment variables.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1. Clone the repository
 
-- Configure the top-level `parserOptions` property like this:
+Run the following command in your terminal to clone the repository:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/your-username/your-repo-name.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Navigate to the project directory
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Go to the project's folder:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd your-repo-name
 ```
+
+### 3. Install dependencies
+
+This project uses yarn as the package manager. If you don't have yarn installed, follow the [official Yarn installation guide](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable).
+
+Install the dependencies by running:
+
+```bash
+yarn install
+```
+
+### 4. Configure environment variables
+
+- Locate the .env.example file in the root directory.
+- Rename it to .env
+- Open the .env file and replace the placeholder values with your own environment variables.
+
+Here is an example of how the .env.example file looks:
+
+```
+VITE_TASK_MANAGER_API_URL=YOUR_API_URL
+VITE_TASK_MANAGER_API_KEY=YOUR_API_KEY
+```
+
+### 5. Generate hooks with `codegen`
+
+Before starting the application, you need to generate the hooks to fetch data. Run the following command:
+
+```bash
+yarn run codegen
+```
+
+### 6. Start the development server
+
+Run the following command to start the development server:
+
+```bash
+yarn dev
+```
+
+## 🐛 Troubleshooting
+
+If you encounter any issues during the setup, please check:
+
+- Ensure all required dependencies are installed.
+- Verify that your .env file contains the correct environment variables.
+
+Feel free to report any issues or bugs in the Issues section.
+
+## 📝 Task Manager Application
+
+The Task Manager Application is a powerful tool designed to help you efficiently manage your tasks and stay organized. With an intuitive interface and robust functionality, this application streamlines task management for individuals.
+
+Key Features:
+
+1. Add Tasks: Create new tasks with relevant details to stay on top of your to-do list.
+2. Edit Tasks: Modify existing tasks to keep them updated as priorities change.
+3. Delete Tasks: Remove tasks that are no longer needed to maintain a clean and organized workspace.
+4. Assign Tasks: Delegate tasks to specific team members or users, ensuring clear responsibilities.
+5. Filter Tasks: Easily filter tasks by status, priority, assigned user, or any other criteria to focus on what matters most.
+
+## 🍵About Stack
+
+- React: Its component-based architecture and hooks make it perfect for building dynamic, modular UIs like task editing and filtering. Plus, it’s popular and reliable.
+- Apollo Client: Seamless GraphQL integration with powerful caching ensures efficient data fetching and a fast, responsive UI.
+- React Hook Form: Lightweight, performant, and easy to use for managing forms like task creation and editing, with built-in validation and minimal re-renders.
+
+## 👨‍💻Techonoglies used
+
+- React
+- Apollo Client
+- React-hook-form
+- Codegen
+- Radix UI
+- Dnd Kit
