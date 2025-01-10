@@ -6,16 +6,10 @@ import { ReactNode } from "react";
 
 interface ModalProps {
   children: ReactNode;
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Modal({ children, isOpen, setIsOpen }: ModalProps) {
-  return (
-    <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-      {children}
-    </Dialog.Root>
-  );
+export default function Modal({ children }: ModalProps) {
+  return <Dialog.Root>{children}</Dialog.Root>;
 }
 
 function ModalContent({

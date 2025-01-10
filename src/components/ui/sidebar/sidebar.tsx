@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./sidebar.module.css";
-import System from "@/assets/svgs/system.svg?react";
+import SystemIcon from "@/assets/svgs/system.svg?react";
 import TaskIcon from "@/assets/svgs/lines.svg?react";
+import SettingsIcon from "@/assets/svgs/settings.svg?react";
+import RavnLogo from "../../../../public/images/ravn-logo.svg?react";
 
 const links = [
-  { label: "Dashboard", to: "/dashboard", icon: <System /> },
-  { label: "Task", to: "/my-tasks", icon: <TaskIcon /> },
+  { label: "Dashboard", to: "/dashboard", icon: <SystemIcon /> },
+  { label: "My Tasks", to: "/my-tasks", icon: <TaskIcon /> },
+  {
+    label: "Settings",
+    to: "/profile",
+    icon: <SettingsIcon width={22} height={22} />,
+  },
 ];
 
 export default function Sidebar() {
@@ -19,7 +26,8 @@ export default function Sidebar() {
       }`}
     >
       <div className={styles.toggler} onClick={() => setToggle(!toggle)}>
-        <img src="/images/ravn-logo.svg" />
+        {/* <img src="/images/ravn-logo.svg" /> */}
+        <RavnLogo />
       </div>
       <div className={styles.linksContainer}>
         {links.map((link, key) => (

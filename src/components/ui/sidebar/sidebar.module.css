@@ -22,6 +22,24 @@
   line-height: var(--leading);
   letter-spacing: var(--letter-spacing-sm);
   padding-bottom: 3px;
+  transition: all 0.3s ease;
+}
+
+.navLink path {
+  transition: all 0.3s ease;
+  color: var(--color-neutral-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLink:hover {
+  color: var(--color-primary-4);
+}
+
+.navLink:hover path {
+  color: var(--color-primary-4);
+  fill: var(--color-primary-4);
 }
 
 .notActive {
@@ -48,6 +66,10 @@
 
 .toggler {
   display: none;
+}
+
+.toggler path {
+  fill: var(--color-neutral-1);
 }
 
 @media (min-width: 768px) {
@@ -101,8 +123,8 @@
     color: var(--color-primary-4);
     background: linear-gradient(
       to right,
-      rgb(186, 37, 37, 0),
-      rgb(210, 77, 77, 0.1)
+      rgba(186, 37, 37, 0),
+      var(--color-primary-opacity)
     );
   }
   .isActive path {

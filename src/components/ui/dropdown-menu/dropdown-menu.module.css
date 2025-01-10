@@ -1,3 +1,7 @@
+.dropwdownContainer {
+  position: relative;
+}
+
 .triggerButton {
   background-color: transparent;
   border: none;
@@ -9,10 +13,24 @@
   width: 104px;
   height: 32px;
   display: flex;
+  border-radius: var(--rounded);
   justify-content: center;
   align-items: center;
   color: var(--color-neutral-1);
   gap: 8px;
+  cursor: pointer;
+}
+.triggerButton path {
+  fill: var(--color-neutral-1);
+}
+
+.isError {
+  border: 1px solid var(--color-primary-4);
+}
+
+.errorMessage {
+  color: var(--color-primary-4);
+  position: absolute;
 }
 
 .dropwDownContent {
@@ -31,6 +49,7 @@
 .dropdownItem {
   display: flex;
   position: relative;
+  padding: 4px 16px;
 }
 
 .dropdownLabel {
@@ -40,6 +59,7 @@
   line-height: var(--leading-xl);
   letter-spacing: var(--letter-spacing);
   color: var(--color-neutral-2);
+  padding: 4px 16px;
 }
 
 .checkbox {
@@ -47,9 +67,11 @@
   width: 18px;
   height: 18px;
   position: absolute;
+  cursor: pointer;
 }
 
 .customCheckbox {
+  cursor: pointer;
   width: 18px;
   height: 18px;
   display: inline-block;
@@ -67,5 +89,18 @@
 }
 
 .label {
+  cursor: pointer;
   color: var(--color-neutral-1);
+}
+
+@media (max-width: 616px) {
+  .triggerButton {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 10px;
+  }
+
+  .dropwDownContent {
+    z-index: 20;
+  }
 }

@@ -1,3 +1,9 @@
+.datePickerContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
 .datePicker {
   display: flex;
   width: fit-content;
@@ -6,11 +12,27 @@
   gap: 8px;
   background-color: #94979a1a;
   padding-left: 10px;
+  border-radius: var(--rounded);
+}
+
+.datePicker path {
+  fill: var(--color-neutral-1);
+}
+
+.isError {
+  border: 1px solid var(--color-primary-4);
+}
+.errorMessage {
+  color: var(--color-primary-4);
+  position: absolute;
+  bottom: -20px;
 }
 
 .calendarIcon {
   width: 20px;
   height: 20px;
+  position: absolute;
+  left: 10px;
 }
 
 .input {
@@ -23,8 +45,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  width: 90px;
+  width: 129px;
   max-width: 161px;
+  padding-left: 32px;
+  cursor: pointer;
 }
 
 .input::placeholder {
@@ -57,4 +81,18 @@
 .chevronsContainer {
   display: flex;
   padding: 0px;
+}
+
+@media (max-width: 616px) {
+  .datePicker {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 10px;
+  }
+
+  .input {
+    width: 100%;
+    padding-left: 32px;
+    cursor: pointer;
+  }
 }
