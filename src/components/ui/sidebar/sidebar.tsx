@@ -3,16 +3,16 @@ import { NavLink } from "react-router-dom";
 import styles from "./sidebar.module.css";
 import SystemIcon from "@/assets/svgs/system.svg?react";
 import TaskIcon from "@/assets/svgs/lines.svg?react";
-import SettingsIcon from "@/assets/svgs/settings.svg?react";
+import PersonIcon from "@/assets/svgs/person.svg?react";
 import RavnLogo from "@/assets/svgs/ravn-logo.svg?react";
 
 const links = [
   { label: "Dashboard", to: "/dashboard", icon: <SystemIcon /> },
   { label: "My Tasks", to: "/my-tasks", icon: <TaskIcon /> },
   {
-    label: "Settings",
+    label: "Profile",
     to: "/profile",
-    icon: <SettingsIcon width={22} height={22} />,
+    icon: <PersonIcon width={22} height={22} />,
   },
 ];
 
