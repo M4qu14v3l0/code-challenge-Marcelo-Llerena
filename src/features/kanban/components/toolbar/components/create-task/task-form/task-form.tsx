@@ -6,6 +6,10 @@ import FormView from "./components/form-view/form-view";
 import { PointEstimate, TaskTag } from "@/__generated__/types";
 import { useUpdateTask } from "@/features/kanban/components/task-group/components/task-card/hooks/use-update-task";
 import dayjs from "dayjs";
+import {
+  handleErrorToast,
+  handleSuccessToast,
+} from "@/components/ui/toasts/toasts";
 
 interface Task {
   id: string;
@@ -18,11 +22,15 @@ interface Task {
 
 interface TaskFormProps {
   task?: Task;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function TaskForm({ task, setIsOpen }: TaskFormProps) {
-  const { register, handleSubmit, control } = useForm<TaskFormValues>({
+export default function TaskForm({ task }: TaskFormProps) {
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<TaskFormValues>({
     resolver: zodResolver(TaskSchema),
     defaultValues: task
       ? {
@@ -42,11 +50,22 @@ export default function TaskForm({ task, setIsOpen }: TaskFormProps) {
 
   const onSubmit: SubmitHandler<TaskFormValues> = async (formData) => {
     if (task) {
-      await update(task.id, formData);
+      try {
+        await update(task.id, formData);
+        handleSuccessToast("Task updated successfully!");
+      } catch (error) {
+        console.log(error);
+        handleErrorToast("Failed to update task. Please try again.");
+      }
     } else {
-      await create(formData);
+      try {
+        await create(formData);
+        handleSuccessToast("Task created successfully!");
+      } catch (error) {
+        console.log(error);
+        handleErrorToast("Failed to create task. Please try again.");
+      }
     }
-    setIsOpen(false);
   };
 
   return (
@@ -54,6 +73,7 @@ export default function TaskForm({ task, setIsOpen }: TaskFormProps) {
       control={control}
       onSubmit={handleSubmit(onSubmit)}
       register={register}
+      errors={errors}
     />
   );
 }
