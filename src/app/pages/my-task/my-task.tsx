@@ -4,8 +4,8 @@ import { useKanbanTasks } from "@/features/kanban/hooks/use-kanban-tasks";
 import Kanban from "@/features/kanban/kanban";
 
 export default function MyTaskPage() {
-  const { profileId } = useGetProfile();
-  const { tasksByStatus } = useKanbanTasks({ assigneeId: profileId });
+  const { profileData } = useGetProfile();
+  const { tasksByStatus } = useKanbanTasks({ assigneeId: profileData?.id });
 
   return (
     <Kanban>
