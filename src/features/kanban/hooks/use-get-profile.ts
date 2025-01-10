@@ -6,6 +6,6 @@ export const useGetProfile = () => {
   return {
     loading,
     error,
-    profileId: data?.profile.id,
+    profileData: data?.profile,
   };
 };
