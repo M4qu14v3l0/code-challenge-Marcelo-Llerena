@@ -3,6 +3,7 @@ import { Paths } from "./path.routes";
 import DashboardLayout from "@/components/layouts/dashboard-layout/dashboard-layout";
 import DashboardPage from "../pages/dashboard/dashboard";
 import MyTaskPage from "../pages/my-task/my-task";
+import ProfilePage from "../pages/profile/profile";
 
 export const AppRoutes: RouteObject[] = [
   {
@@ -20,6 +21,10 @@ export const AppRoutes: RouteObject[] = [
       {
         path: Paths.MY_TASK,
         element: <MyTaskPage />,
+      },
+      {
+        path: Paths.PROFILE,
+        element: <ProfilePage />,
       },
     ],
   },
