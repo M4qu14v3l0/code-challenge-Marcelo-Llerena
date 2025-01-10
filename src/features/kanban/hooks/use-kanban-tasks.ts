@@ -3,13 +3,18 @@ import { useGetTasksQuery } from "../api/get-tasks/get-tasks.generated";
 
 interface UseKanbanTasksProps {
   assigneeId?: string;
+  name?: string;
 }
 
-export const useKanbanTasks = ({ assigneeId }: UseKanbanTasksProps = {}) => {
-  const { loading, error, data } = useGetTasksQuery({
+export const useKanbanTasks = ({
+  assigneeId,
+  name,
+}: UseKanbanTasksProps = {}) => {
+  const { loading, error, data, refetch } = useGetTasksQuery({
     variables: {
       input: {
         assigneeId: assigneeId || undefined,
+        name: name || undefined,
       },
     },
   });
@@ -21,5 +26,6 @@ export const useKanbanTasks = ({ assigneeId }: UseKanbanTasksProps = {}) => {
     tasksByStatus,
     loading,
     error,
+    refetch,
   };
 };
