@@ -3,13 +3,11 @@ import TrashIcon from "@/assets/svgs/trash.svg?react";
 import MoreIcon from "@/assets/svgs/more.svg?react";
 
 import * as Popover from "@radix-ui/react-popover";
-import { useDeleteTaskById } from "../../hooks/delete-task-by-id";
 import TaskForm from "@/features/kanban/components/toolbar/components/create-task/task-form/task-form";
 import { PointEstimate, TaskTag } from "@/__generated__/types";
 import Modal from "@/components/ui/modal/modal";
-import { useState } from "react";
-
 import styles from "./edit-pop.module.css";
+import DeleteTask from "@/features/kanban/components/actions/delete-task/delete-task";
 
 interface EditPopProps {
   id: string;
@@ -28,8 +26,6 @@ export default function EditPop({
   assigneeId,
   tags,
 }: EditPopProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const { deleteTaskById } = useDeleteTaskById();
   const taskInfo = { title, id, pointsEstimate, dueDate, assigneeId, tags };
 
   return (
@@ -44,20 +40,26 @@ export default function EditPop({
             align="end"
             sideOffset={5}
           >
-            <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+            <Modal>
               <Modal.Trigger className={`${styles.buttonIcon}`}>
-                <PencilIcon /> Edit
+                <span>
+                  <PencilIcon /> Edit
+                </span>
               </Modal.Trigger>
               <Modal.Content title="Edit Task">
-                <TaskForm setIsOpen={setIsOpen} task={taskInfo} />
+                <TaskForm task={taskInfo} />
               </Modal.Content>
             </Modal>
-            <button
-              className={styles.buttonIcon}
-              onClick={() => deleteTaskById(id)}
-            >
-              <TrashIcon /> Delete
-            </button>
+            <Modal>
+              <Modal.Trigger className={`${styles.buttonIcon}`}>
+                <span>
+                  <TrashIcon /> Delete
+                </span>
+              </Modal.Trigger>
+              <Modal.Content title="Delete Task">
+                <DeleteTask taskName={taskInfo.title} id={taskInfo.id} />
+              </Modal.Content>
+            </Modal>
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
