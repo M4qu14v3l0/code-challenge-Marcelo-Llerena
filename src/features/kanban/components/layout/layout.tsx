@@ -14,10 +14,11 @@ import TaskCard from "../task-group/components/task-card/task-card";
 import { TaskFieldsFragment } from "../../api/get-tasks/get-tasks.generated";
 import { createPortal } from "react-dom";
 import debounce from "lodash/debounce";
-import { Status } from "@/__generated__/types";
-// import { useSyncServerOnDrop } from "../../hooks/use-sync-server-on-drop";
+
+import { useSyncServerOnDrop } from "../../hooks/use-sync-server-on-drop";
 import { useGetFinalTaskData } from "../../hooks/use-get-final-task-data";
 import { useLocalResetPosition } from "../../hooks/use-local-reset-position";
+import { Status } from "@/__generated__/types";
 
 interface LayoutProps {
   children: ReactNode;
@@ -29,7 +30,7 @@ export const Layout = ({ children }: LayoutProps) => {
   const [activeTask, setActiveTask] = useState<UniqueIdentifier>();
   const [taskData, setTaskData] = useState<TaskFieldsFragment>();
   const { forceLocalReorder } = useLocalReorder();
-  // const { finalizeReorder } = useSyncServerOnDrop();
+  const { finalizeReorder } = useSyncServerOnDrop();
   const { getFinalCardData } = useGetFinalTaskData();
   const { resetPositioning } = useLocalResetPosition();
 
@@ -39,7 +40,7 @@ export const Layout = ({ children }: LayoutProps) => {
         async (activeId: string, newStatus: Status, newPosition: number) => {
           forceLocalReorder(activeId, newStatus, newPosition);
         },
-        300
+        180
       ),
     [forceLocalReorder]
   );
@@ -70,20 +71,28 @@ export const Layout = ({ children }: LayoutProps) => {
     const isOverTask = over.data.current?.type === "Task";
 
     if (!isActiveTask) return;
-
     if (isActiveTask && isOverTask) {
       const overTask = overData.task;
       const newPosition = overTask.position;
 
-      debouncedUpdateStatus(activeId, overTask.status, newPosition);
-
-      return;
-    }
-    const isOverColumn = over.data.current?.type === "Column";
-    if (isActiveTask && isOverColumn && !isOverTask && activeData.task) {
+      if (newPosition < activeData.task.position) {
+        debouncedUpdateStatus(activeId, overTask.status, newPosition);
+      } else if (newPosition > activeData.task.position) {
+        debouncedUpdateStatus(
+          overId,
+          overTask.status,
+          activeData.task.position
+        );
+      } else {
+        if (newPosition === 1) {
+          debouncedUpdateStatus(activeId, overTask.status, 0);
+        } else {
+          debouncedUpdateStatus(activeId, overTask.status, newPosition - 1);
+        }
+      }
+    } else {
       const columnStatus = overData.status;
       const isColumnEmpty = overData.tasks === 0;
-
       if (isOverTask) return;
       const newPosition = isColumnEmpty ? 1 : overData.tasks + 1;
       debouncedUpdateStatus(activeId, columnStatus, newPosition);
@@ -94,16 +103,21 @@ export const Layout = ({ children }: LayoutProps) => {
     setActiveTask(undefined);
     setTaskData(undefined);
     debouncedUpdateStatus.cancel();
+    if (!taskData) return;
+    resetPositioning(taskData.status);
 
     const finalTask = getFinalCardData(activeTask as string);
     if (!finalTask) return;
-
     resetPositioning(finalTask.status);
 
-    // const THEFINAL = getFinalCardData(activeTask as string);
-    // if (!THEFINAL) return;
-    // if (!activeTask || !taskData) return;
-    // finalizeReorder(THEFINAL.id, THEFINAL.status, THEFINAL.position);
+    const updateTaskInServer = getFinalCardData(activeTask as string);
+    if (!updateTaskInServer) return;
+    if (!activeTask || !taskData) return;
+    finalizeReorder(
+      updateTaskInServer.id,
+      updateTaskInServer.status,
+      updateTaskInServer.position
+    );
   };
 
   useEffect(() => {
