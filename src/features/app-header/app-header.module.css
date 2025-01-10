@@ -26,8 +26,8 @@
   .appHeader {
     border-radius: var(--rounded-2xl);
   }
-}
 
-.hide {
-  display: none;
+  .hide {
+    display: none;
+  }
 }

@@ -12,8 +12,9 @@
 
 .main {
   grid-area: main;
-  overflow: hidden;
-  height: 100%;
+  overflow-x: hidden;
+  scrollbar-width: none;
+
   padding: 20px 16px 0px 16px;
 }
 
@@ -41,5 +42,12 @@
 
   .main {
     padding: 0;
+  }
+}
+
+@media (min-width: 570px) {
+  .main {
+    overflow: hidden;
+    height: 100%;
   }
 }
