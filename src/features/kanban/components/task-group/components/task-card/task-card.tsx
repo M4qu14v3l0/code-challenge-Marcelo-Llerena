@@ -1,4 +1,4 @@
-import { TaskFieldsFragment } from "@/features/kanban/api/get-tasks/get-tasks.generated";
+import { TaskFieldsFragment } from "@/api/get-tasks/get-tasks.generated";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 

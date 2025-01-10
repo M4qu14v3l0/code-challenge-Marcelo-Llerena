@@ -5,7 +5,7 @@ import ClockIcon from "@/assets/svgs/clock.svg?react";
 import Tag from "@/features/kanban/components/shared/tag/tag";
 import { formatDateCustom } from "@/features/kanban/utils/formatDate";
 import { formatEstimatePoints } from "@/features/kanban/utils/format-estimate-points";
-import { TaskFieldsFragment } from "@/features/kanban/api/get-tasks/get-tasks.generated";
+import { TaskFieldsFragment } from "@/api/get-tasks/get-tasks.generated";
 
 interface SubHeaderProps {
   points: TaskFieldsFragment["pointEstimate"];

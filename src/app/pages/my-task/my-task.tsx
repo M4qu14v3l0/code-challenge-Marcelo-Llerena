@@ -1,7 +1,8 @@
 import { Status } from "@/__generated__/types";
-import { useGetProfile } from "@/features/kanban/hooks/use-get-profile";
-import { useKanbanTasks } from "@/features/kanban/hooks/use-kanban-tasks";
+
+import { useKanbanTasks } from "@/hooks/use-kanban-tasks";
 import Kanban from "@/features/kanban/kanban";
+import { useGetProfile } from "@/hooks/use-get-profile";
 
 export default function MyTaskPage() {
   const { profileData } = useGetProfile();

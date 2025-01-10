@@ -1,4 +1,4 @@
-import { TaskFieldsFragment } from "@/features/kanban/api/get-tasks/get-tasks.generated";
+import { TaskFieldsFragment } from "@/api/get-tasks/get-tasks.generated";
 import { useMemo } from "react";
 
 export const useGetTasksByStatus = (tasks: TaskFieldsFragment[]) => {

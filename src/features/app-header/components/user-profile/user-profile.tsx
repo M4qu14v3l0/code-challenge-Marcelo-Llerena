@@ -1,13 +1,14 @@
 import Avatar from "@/components/ui/avatar/avatar";
 import styles from "./user-profile.module.css";
 import * as Popover from "@radix-ui/react-popover";
-import { useGetProfile } from "@/features/kanban/hooks/use-get-profile";
+
 import { NavLink } from "react-router-dom";
 
 import PersonIcon from "@/assets/svgs/person.svg?react";
 import MoonIcon from "@/assets/svgs/moon.svg?react";
 import SunIcon from "@/assets/svgs/sun.svg?react";
 import { useState } from "react";
+import { useGetProfile } from "@/hooks/use-get-profile";
 
 export default function UserProfile() {
   const { profileData } = useGetProfile();

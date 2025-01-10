@@ -7,7 +7,7 @@ import TaskForm from "@/features/kanban/components/toolbar/components/create-tas
 import { PointEstimate, TaskTag } from "@/__generated__/types";
 import Modal from "@/components/ui/modal/modal";
 import styles from "./edit-pop.module.css";
-import DeleteTask from "@/features/kanban/components/actions/delete-task/delete-task";
+import DeleteTask from "@/features/kanban/actions/delete-task/delete-task";
 
 interface EditPopProps {
   id: string;

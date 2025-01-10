@@ -1,4 +1,4 @@
-import { useUpdateTaskMutation } from "../api/update-task/update-task.generated";
+import { useUpdateTaskMutation } from "../../../../../api/update-task/update-task.generated";
 import { Status } from "@/__generated__/types";
 
 export const useSyncServerOnDrop = () => {

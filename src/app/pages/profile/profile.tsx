@@ -1,4 +1,4 @@
-import { useGetProfile } from "@/features/kanban/hooks/use-get-profile";
+import { useGetProfile } from "@/hooks/use-get-profile";
 import styles from "./profile.module.css";
 import Avatar from "@/components/ui/avatar/avatar";
 

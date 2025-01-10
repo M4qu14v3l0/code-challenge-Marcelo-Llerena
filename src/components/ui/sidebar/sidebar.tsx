@@ -4,7 +4,7 @@ import styles from "./sidebar.module.css";
 import SystemIcon from "@/assets/svgs/system.svg?react";
 import TaskIcon from "@/assets/svgs/lines.svg?react";
 import SettingsIcon from "@/assets/svgs/settings.svg?react";
-import RavnLogo from "../../../../public/images/ravn-logo.svg?react";
+import RavnLogo from "@/assets/svgs/ravn-logo.svg?react";
 
 const links = [
   { label: "Dashboard", to: "/dashboard", icon: <SystemIcon /> },

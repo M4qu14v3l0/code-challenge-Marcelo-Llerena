@@ -1,5 +1,5 @@
-import { useCreateTaskMutation } from "@/features/kanban/api/create-task/create-task.generated";
-import { GetTasksDocument } from "@/features/kanban/api/get-tasks/get-tasks.generated";
+import { useCreateTaskMutation } from "@/api/create-task/create-task.generated";
+import { GetTasksDocument } from "@/api/get-tasks/get-tasks.generated";
 import { TaskFormValues } from "../schema/task-squema";
 import { Status } from "@/__generated__/types";
 

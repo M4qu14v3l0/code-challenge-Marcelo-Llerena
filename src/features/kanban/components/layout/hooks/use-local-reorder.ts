@@ -3,7 +3,7 @@ import { FilterTaskInput, Status } from "@/__generated__/types";
 import {
   GetTasksDocument,
   GetTasksQuery,
-} from "../api/get-tasks/get-tasks.generated";
+} from "../../../../../api/get-tasks/get-tasks.generated";
 
 export const useLocalReorder = () => {
   const client = useApolloClient();

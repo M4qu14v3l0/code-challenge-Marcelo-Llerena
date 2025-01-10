@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useDeleteTaskById } from "../../task-group/components/task-card/hooks/delete-task-by-id";
 import Button from "@/components/ui/button/button";
 import styles from "./delete-task.module.css";
 import { handleErrorToast } from "@/components/ui/toasts/toasts";
+import { useDeleteTaskById } from "../../../../hooks/delete-task-by-id";
 
 interface DeleteTaskProps {
   taskName: string;

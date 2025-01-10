@@ -9,15 +9,15 @@ import {
 } from "@dnd-kit/core";
 import TableHeader from "../task-group/components/task-list/components/ui/table-header/table-header";
 import styles from "./layout.module.css";
-import { useLocalReorder } from "../../hooks/use-local-reorder";
+import { useLocalReorder } from "./hooks/use-local-reorder";
 import TaskCard from "../task-group/components/task-card/task-card";
-import { TaskFieldsFragment } from "../../api/get-tasks/get-tasks.generated";
+import { TaskFieldsFragment } from "../../../../api/get-tasks/get-tasks.generated";
 import { createPortal } from "react-dom";
 import debounce from "lodash/debounce";
 
-import { useSyncServerOnDrop } from "../../hooks/use-sync-server-on-drop";
-import { useGetFinalTaskData } from "../../hooks/use-get-final-task-data";
-import { useLocalResetPosition } from "../../hooks/use-local-reset-position";
+import { useSyncServerOnDrop } from "./hooks/use-sync-server-on-drop";
+import { useGetFinalTaskData } from "./hooks/use-get-final-task-data";
+import { useLocalResetPosition } from "./hooks/use-local-reset-position";
 import { Status } from "@/__generated__/types";
 
 interface LayoutProps {

@@ -1,4 +1,4 @@
-import { GetTasksQuery } from "@/features/kanban/api/get-tasks/get-tasks.generated";
+import { GetTasksQuery } from "@/api/get-tasks/get-tasks.generated";
 import { createContext, useContext } from "react";
 
 interface TaskListContext {

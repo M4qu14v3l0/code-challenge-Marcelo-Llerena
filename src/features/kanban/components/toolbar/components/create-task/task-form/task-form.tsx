@@ -4,7 +4,7 @@ import { TaskFormValues, TaskSchema } from "./schema/task-squema";
 import { useCreateTask } from "./hooks/use-create-task";
 import FormView from "./components/form-view/form-view";
 import { PointEstimate, TaskTag } from "@/__generated__/types";
-import { useUpdateTask } from "@/features/kanban/components/task-group/components/task-card/hooks/use-update-task";
+import { useUpdateTask } from "@/hooks/use-update-task";
 import dayjs from "dayjs";
 import {
   handleErrorToast,

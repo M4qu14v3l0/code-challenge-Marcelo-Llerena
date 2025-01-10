@@ -3,7 +3,7 @@ import { formatDateCustom } from "@/features/kanban/utils/formatDate";
 import { capitalizeText } from "@/features/kanban/utils/capitalize-text";
 import Tag from "@/features/kanban/components/shared/tag/tag";
 import styles from "./row.module.css";
-import { TaskFieldsFragment } from "@/features/kanban/api/get-tasks/get-tasks.generated";
+import { TaskFieldsFragment } from "@/api/get-tasks/get-tasks.generated";
 
 interface RowProps {
   task: TaskFieldsFragment;

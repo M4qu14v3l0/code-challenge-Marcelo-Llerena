@@ -8,7 +8,7 @@ import { SortableContext } from "@dnd-kit/sortable";
 
 import EmptyTaskGroup from "./components/empty-task-group/empty-task-group";
 import { Status } from "@/__generated__/types";
-import { TaskFieldsFragment } from "../../api/get-tasks/get-tasks.generated";
+import { TaskFieldsFragment } from "../../../../api/get-tasks/get-tasks.generated";
 import { hasData } from "../../utils/has-data";
 import { statusColumnData } from "@/constants/status-column-data";
 

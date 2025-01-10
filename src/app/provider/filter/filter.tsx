@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useCallback } from "react";
 import { debounce } from "lodash";
-import { useKanbanTasks } from "@/features/kanban/hooks/use-kanban-tasks";
+import { useKanbanTasks } from "@/hooks/use-kanban-tasks";
 
 interface FilterContextProps {
   searchValue: string;

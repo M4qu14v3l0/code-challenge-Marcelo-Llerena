@@ -1,6 +1,6 @@
 import { Status } from "@/__generated__/types";
 import { FilterProvider } from "@/app/provider/filter/filter";
-import { useKanbanTasks } from "@/features/kanban/hooks/use-kanban-tasks";
+import { useKanbanTasks } from "@/hooks/use-kanban-tasks";
 import Kanban from "@/features/kanban/kanban";
 
 export default function DashboardPage() {

@@ -1,5 +1,5 @@
-import { useDeleteTaskMutation } from "@/features/kanban/api/delete-task/delete-task.generated";
-import { GetTasksDocument } from "@/features/kanban/api/get-tasks/get-tasks.generated";
+import { useDeleteTaskMutation } from "@/api/delete-task/delete-task.generated";
+import { GetTasksDocument } from "@/api/get-tasks/get-tasks.generated";
 
 export const useDeleteTaskById = () => {
   const [deleteTask, { loading, error }] = useDeleteTaskMutation({

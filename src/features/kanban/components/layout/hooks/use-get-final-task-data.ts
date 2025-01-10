@@ -1,7 +1,7 @@
 import {
   GetTasksDocument,
   GetTasksQuery,
-} from "../api/get-tasks/get-tasks.generated";
+} from "../../../../../api/get-tasks/get-tasks.generated";
 import { FilterTaskInput } from "@/__generated__/types";
 import { useApolloClient } from "@apollo/client";
 

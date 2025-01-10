@@ -1,5 +1,5 @@
-import { GetTasksDocument } from "@/features/kanban/api/get-tasks/get-tasks.generated";
-import { useUpdateTaskMutation } from "@/features/kanban/api/update-task/update-task.generated";
+import { GetTasksDocument } from "@/api/get-tasks/get-tasks.generated";
+import { useUpdateTaskMutation } from "@/api/update-task/update-task.generated";
 import { TaskFormValues } from "@/features/kanban/components/toolbar/components/create-task/task-form/schema/task-squema";
 
 export const useUpdateTask = () => {

@@ -44,8 +44,8 @@ yarn install
 Here is an example of how the .env.example file looks:
 
 ```
-VITE_API_URL=YOUR_API_URL
-VITE_API_KEY=YOUR_API_KEY
+VITE_TASK_MANAGER_API_URL=YOUR_API_URL
+VITE_TASK_MANAGER_API_KEY=YOUR_API_KEY
 ```
 
 ### 5. Generate hooks with `codegen`

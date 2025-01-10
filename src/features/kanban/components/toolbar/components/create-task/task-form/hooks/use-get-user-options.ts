@@ -1,4 +1,4 @@
-import { useGetUsersQuery } from "@/features/kanban/api/get-users/get-users.generated";
+import { useGetUsersQuery } from "@/api/get-users/get-users.generated";
 
 export const useGetUserOptions = () => {
   const { data } = useGetUsersQuery();
