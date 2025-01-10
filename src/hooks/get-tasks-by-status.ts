@@ -9,10 +9,10 @@ export const useGetTasksByStatus = (tasks: TaskFieldsFragment[]) => {
         return acc;
       },
       {
+        BACKLOG: [] as TaskFieldsFragment[],
         TODO: [] as TaskFieldsFragment[],
         IN_PROGRESS: [] as TaskFieldsFragment[],
         DONE: [] as TaskFieldsFragment[],
-        BACKLOG: [] as TaskFieldsFragment[],
         CANCELLED: [] as TaskFieldsFragment[],
       }
     );
