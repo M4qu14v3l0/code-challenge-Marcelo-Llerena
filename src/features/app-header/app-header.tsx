@@ -9,8 +9,6 @@ export default function AppHeader() {
   const location = useLocation();
   const isMyProfile = location.pathname === "/profile";
 
-  console.log(isMyProfile);
-
   return (
     <div className={`${styles.appHeader} ${isMyProfile && styles.hide}`}>
       <UserProfile />
