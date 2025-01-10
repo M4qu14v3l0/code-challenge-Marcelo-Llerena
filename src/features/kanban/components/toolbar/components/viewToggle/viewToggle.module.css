@@ -20,3 +20,9 @@
 .selected path {
   fill: var(--color-primary-4);
 }
+
+@media (max-width: 763px) {
+  .viewMode {
+    display: none;
+  }
+}

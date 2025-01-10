@@ -11,6 +11,10 @@
   justify-content: space-between;
 }
 
+.taskDetails path {
+  fill: var(--color-neutral-1);
+}
+
 .taskDetails span {
   display: flex;
   align-items: center;

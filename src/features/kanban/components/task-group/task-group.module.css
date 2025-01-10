@@ -7,14 +7,21 @@
   margin-bottom: 16px;
 }
 
+.taskGroup {
+  height: 100px;
+}
+
 .group {
+  box-sizing: content-box;
+  padding-bottom: 200px;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
   min-width: 340px;
-  height: 78vh;
-  overflow-y: scroll;
+  max-width: 480px;
+  min-height: 500px;
+  height: fit-content;
 }
 
 .group::-webkit-scrollbar-thumb {
@@ -25,17 +32,4 @@
 
 .group::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.6);
-}
-
-@media (min-width: 500px) {
-  .taskGroup {
-    display: block;
-    height: auto;
-  }
-}
-
-@media (min-width: 992px) {
-  .group {
-    overflow-y: scroll;
-  }
 }

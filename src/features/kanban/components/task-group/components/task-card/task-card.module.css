@@ -4,7 +4,7 @@
 
 .card {
   width: 340px;
-  height: 208px;
+  height: fit-content;
   background-color: var(--color-neutral-4);
   border-radius: var(--rounded-lg);
   padding: 16px;
@@ -52,10 +52,6 @@
 
 @media (min-width: 500px) {
   .skeletonCard {
-    width: 100%;
-  }
-
-  .card {
     width: 100%;
   }
 }

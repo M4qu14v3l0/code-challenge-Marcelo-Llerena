@@ -1,6 +1,6 @@
 .accordionContainer {
   display: flex;
+  height: fit-content;
   flex-direction: column;
-  overflow: hidden;
   z-index: 2;
 }
