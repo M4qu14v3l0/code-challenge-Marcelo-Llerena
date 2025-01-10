@@ -67,6 +67,16 @@
 
   --letter-spacing: 0.75px;
   --letter-spacing-sm: 0.25px;
+  --letter-spacing-head: 1px;
+
+  --head-md: 48px;
+  --leading-head-md: 56px;
+
+  --head-sm: 40px;
+  --leading-head-sm: 48px;
+
+  --head: 24px;
+  --leading-head: 32px;
 
   --text-xl: 20px;
   --leading-xl: 32px;
@@ -90,6 +100,19 @@
   --rounded-md: 6px;
   --rounded: 4px;
   --rounded-sm: 2px;
+}
+
+body.light-mode {
+  --color-neutral-1: #0a100d;
+  --color-neutral-2: #626c66;
+  --color-neutral-3: #403d39;
+  --color-neutral-4: #d4e09b;
+  --color-neutral-5: #f6f4d2;
+
+  --color-primary-2: #cbdfbd;
+  --color-primary-3: #d4e09b;
+  --color-primary-4: #73a580;
+  --color-primary-opacity: rgb(115, 165, 128, 0.1);
 }
 
 *,
