@@ -1,9 +1,13 @@
 import { Status } from "@/__generated__/types";
+import { FilterProvider } from "@/app/provider/filter/filter";
 import { useKanbanTasks } from "@/features/kanban/hooks/use-kanban-tasks";
 import Kanban from "@/features/kanban/kanban";
 
 export default function DashboardPage() {
-  const { tasksByStatus, loading } = useKanbanTasks();
+  const { searchValue } = FilterProvider.useFilter();
+  const { tasksByStatus, loading } = useKanbanTasks({
+    name: searchValue,
+  });
 
   if (loading) return <h1>Loading Tasks</h1>;
 
