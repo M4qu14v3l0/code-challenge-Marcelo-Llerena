@@ -7,7 +7,6 @@ export default function ProfilePage() {
   const name = profileData?.fullName.split(" ")[0];
   return (
     <div className={styles.profileContainer}>
-      <h2>My Profile</h2>
       <div className={styles.pictureSection}>
         <div className={styles.avatarContainer}>
           <Avatar
