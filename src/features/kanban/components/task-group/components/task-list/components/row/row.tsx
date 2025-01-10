@@ -4,6 +4,7 @@ import { capitalizeText } from "@/features/kanban/utils/capitalize-text";
 import Tag from "@/features/kanban/components/shared/tag/tag";
 import styles from "./row.module.css";
 import { TaskFieldsFragment } from "@/api/get-tasks/get-tasks.generated";
+import Avatar from "@/components/ui/avatar/avatar";
 
 interface RowProps {
   task: TaskFieldsFragment;
@@ -26,7 +27,10 @@ export default function Row({ task }: RowProps) {
       <div className={`${styles.childRow} ${styles.pointsEstimateRow}`}>
         {formatEstimatePoints(task.pointEstimate)} Points
       </div>
-      <div className={`${styles.childRow}`}>{task.assignee?.fullName}</div>
+      <div className={`${styles.childRow}`}>
+        <Avatar src={task.assignee?.avatar} height="32px" width="32px" />{" "}
+        {task.assignee?.fullName}
+      </div>
       <div className={`${styles.childRow} ${styles.dueDateRow}`}>
         {capitalizeText(formatDateCustom(task.dueDate))}
       </div>
