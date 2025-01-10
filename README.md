@@ -72,3 +72,30 @@ If you encounter any issues during the setup, please check:
 - Verify that your .env file contains the correct environment variables.
 
 Feel free to report any issues or bugs in the Issues section.
+
+## 📝 Task Manager Application
+
+The Task Manager Application is a powerful tool designed to help you efficiently manage your tasks and stay organized. With an intuitive interface and robust functionality, this application streamlines task management for individuals.
+
+Key Features:
+
+1. Add Tasks: Create new tasks with relevant details to stay on top of your to-do list.
+2. Edit Tasks: Modify existing tasks to keep them updated as priorities change.
+3. Delete Tasks: Remove tasks that are no longer needed to maintain a clean and organized workspace.
+4. Assign Tasks: Delegate tasks to specific team members or users, ensuring clear responsibilities.
+5. Filter Tasks: Easily filter tasks by status, priority, assigned user, or any other criteria to focus on what matters most.
+
+## 🍵About Stack
+
+- React: Its component-based architecture and hooks make it perfect for building dynamic, modular UIs like task editing and filtering. Plus, it’s popular and reliable.
+- Apollo Client: Seamless GraphQL integration with powerful caching ensures efficient data fetching and a fast, responsive UI.
+- React Hook Form: Lightweight, performant, and easy to use for managing forms like task creation and editing, with built-in validation and minimal re-renders.
+
+## 👨‍💻Techonoglies used
+
+- React
+- Apollo Client
+- React-hook-form
+- Codegen
+- Radix UI
+- Dnd Kit
