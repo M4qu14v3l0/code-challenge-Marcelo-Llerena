@@ -5,7 +5,7 @@ export const TaskSchema = z.object({
   name: z
     .string()
     .min(5, { message: "Task Name must be at least 5 characters long" })
-    .max(20, { message: "Task Name must not exceed 20 characters" })
+    .max(36, { message: "Task Name must not exceed 20 characters" })
     .nonempty({ message: "Task Name is required" }),
   pointEstimate: z.nativeEnum(PointEstimate, {
     errorMap: () => ({
